@@ -31,6 +31,12 @@ public class DatabaseManager
 		case "transactions": 	return new TransactionDao(db.getCollection(name));
 		default:return null;
 		}
+	}
+	public DB getDb() {
+		return db;
+	}
+	public void setDb(DB db) {
+		this.db = db;
 	}	
 	
 }

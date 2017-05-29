@@ -8,6 +8,7 @@ import com.fitternity.abstracthelpers.BaseCollection;
 import com.fitternity.dao.beans.Customer;
 import com.mongodb.BasicDBObject;
 import com.mongodb.BasicDBObjectBuilder;
+import com.mongodb.Bytes;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
@@ -35,14 +36,17 @@ public class TransactionDao extends BaseCollection
 
 		ArrayList<BasicDBObject> basicDBObjects=new ArrayList<>();
 		
-		basicDBObjects.add(new BasicDBObject("customer_id",new BasicDBObject("$type", 2)));
+//		basicDBObjects.add(new BasicDBObject("customer_id",new BasicDBObject("$type", 2)));
 		//basicDBObjects.add(new BasicDBObject("$type", 2));
 		
-		BasicDBObject orConds[] = {new BasicDBObject("customer_id", new BasicDBObject("$type", 2)),new BasicDBObject("customer_id", new BasicDBObject("$eq", -1)),new BasicDBObject("customer_id", new BasicDBObject("$exists", false)),new BasicDBObject("$where", "this.customer_id.length>5")};
+		BasicDBObject orConds[] = {new BasicDBObject("customer_id", new BasicDBObject("$type", 2)),new BasicDBObject("customer_id", new BasicDBObject("$eq", -1)),new BasicDBObject("customer_id", new BasicDBObject("$exists", false))/*,new BasicDBObject("$where", "this.customer_id.length>5")*/};
+//		BasicDBObject orConds[] = {new BasicDBObject("customer_id", 89609)};
 		//query = new BasicDBObject("$or", or_conditions);
 		DBObject query = BasicDBObjectBuilder.start().add("$or", orConds).get();
-		
+		System.out.println(" QUERY :: "+query);
+		System.out.println(collection.getName());
 		DBCursor cursor = collection.find(query);
+		cursor.addOption(Bytes.QUERYOPTION_NOTIMEOUT);
 		
 		System.out.println(" MAIN UNCETAIN CURSOR SIZE" +cursor.count());
 		//while(cursor.hasNext()){

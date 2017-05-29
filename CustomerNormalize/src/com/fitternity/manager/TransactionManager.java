@@ -21,6 +21,7 @@ public class TransactionManager
 
 {
 	MongoClient mongoClient ; 
+	String type;
 	DB db; 
 	
 	public MongoClient getConnection(String type) 
@@ -39,7 +40,7 @@ public class TransactionManager
 //				MongoCredential testAuth = MongoCredential.createPlainCredential("pankaj", "test", "pankaj123".toCharArray());
 				ArrayList<MongoCredential> auths=new ArrayList<>();
 				auths.add(journaldevAuth);
-				MongoClient mongo = new MongoClient(new ServerAddress("localhost", 27017), auths);
+				MongoClient mongo = new MongoClient(new ServerAddress("35.154.147.1", 27017), auths);
 				return 	this.mongoClient;
 			}
 		}
@@ -57,17 +58,17 @@ public class TransactionManager
 			if(type.equals("local"))
 			{
 				this.mongoClient= new MongoClient( "localhost" , 27017 );
+				this.type=type;
 				return true;		
 			}
-			else
+			else if(type.equals("staging"))
 			{
-				MongoCredential journaldevAuth = MongoCredential.createPlainCredential("pankaj", "journaldev", "pankaj123".toCharArray());
-//				MongoCredential testAuth = MongoCredential.createPlainCredential("pankaj", "test", "pankaj123".toCharArray());
-				ArrayList<MongoCredential> auths=new ArrayList<>();
-				auths.add(journaldevAuth);
-				MongoClient mongo = new MongoClient(new ServerAddress("localhost", 27017), auths);
+				this.mongoClient= new MongoClient( "localhost" , 27017 );
+				this.type=type;
 				return 	true;
 			}
+			else
+				return false;
 		}
 		catch (UnknownHostException e) 
 		{
@@ -91,7 +92,6 @@ public class TransactionManager
 	}
 	public BaseCollection getCollection(String name) 
 	{
-		
 		switch (name) {
 		case "vendors": 	return new VendorDao(db.getCollection(name));
 		case "customers": 	return new CustomerDao(db.getCollection(name));
@@ -102,8 +102,13 @@ public class TransactionManager
 	}
 	public DatabaseManager getDatabaseManager(String db) 
 	{
-		return new DatabaseManager(this.mongoClient,db);
-		
-	}	
-	
+		System.out.println(" this.mongoClient ::  "+this.mongoClient);
+		DatabaseManager databaseManager=new DatabaseManager(this.mongoClient,db);
+		System.out.println(type);
+		System.out.println(" databaseManager.getDb().getName() ::  "+databaseManager.getDb().getName());
+		System.out.println(" databaseManager.getDb() ::  "+databaseManager.getDb());
+		if(type.equals("staging"))
+			databaseManager.getDb().authenticate("fitadmin", "fit1234".toCharArray());
+		return databaseManager;
+	}		
 }
