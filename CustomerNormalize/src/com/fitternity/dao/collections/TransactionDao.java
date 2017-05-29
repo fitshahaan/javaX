@@ -31,26 +31,27 @@ public class TransactionDao extends BaseCollection
 	}
 	public DBCursor getUncertainTransactions() {
 //		DBObject query = BasicDBObjectBuilder.start()
-//				.add("customer_id", new BasicDBObject("$type", 2)).get();
-		
+//		.add("customer_id", new BasicDBObject("$type", 2)).get();
+
 		ArrayList<BasicDBObject> basicDBObjects=new ArrayList<>();
+		
 		basicDBObjects.add(new BasicDBObject("customer_id",new BasicDBObject("$type", 2)));
-//		basicDBObjects.add(new BasicDBObject("$type", 2));
-		String a[]=new String[200];
-		BasicDBObject and_conditions[] = {new BasicDBObject("customer_id", new BasicDBObject("$type", 2)),new BasicDBObject("$where", "this.customer_id.length>5")};
-//	    query = new BasicDBObject("$or", or_conditions);
-		DBObject query = BasicDBObjectBuilder.start()
-				.add("$and", and_conditions).get();
+		//basicDBObjects.add(new BasicDBObject("$type", 2));
+		
+		BasicDBObject orConds[] = {new BasicDBObject("customer_id", new BasicDBObject("$type", 2)),new BasicDBObject("customer_id", new BasicDBObject("$eq", -1)),new BasicDBObject("customer_id", new BasicDBObject("$exists", false)),new BasicDBObject("$where", "this.customer_id.length>5")};
+		//query = new BasicDBObject("$or", or_conditions);
+		DBObject query = BasicDBObjectBuilder.start().add("$or", orConds).get();
+		
 		DBCursor cursor = collection.find(query);
+		
 		System.out.println(" MAIN UNCETAIN CURSOR SIZE" +cursor.count());
-//		while(cursor.hasNext()){
-//		System.out.println(cursor.next());
-//		
-//		}
+		//while(cursor.hasNext()){
+		//System.out.println(cursor.next());
+		//}
 		return  cursor;
-	
-	}
-	public void updateTransOnCustomerId(long cid, DBObject currentTransObject) {
+
+}
+public void updateTransOnCustomerId(Number cid, DBObject currentTransObject) {
 		
 		ObjectId objId=new ObjectId(currentTransObject.get("_id").toString());
 		System.out.println(" OBJID "+objId);

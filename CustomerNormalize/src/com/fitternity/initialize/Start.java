@@ -7,16 +7,13 @@ import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import com.fitternity.dao.beans.Customer;
 import com.fitternity.dao.collections.CustomerDao;
 import com.fitternity.dao.collections.OzoneTelDao;
 import com.fitternity.dao.collections.TransactionDao;
 import com.fitternity.manager.TransactionManager;
 import com.mongodb.BasicDBObject;
-import com.mongodb.BulkUpdateRequestBuilder;
+import com.mongodb.BasicDBObjectBuilder;
 import com.mongodb.BulkWriteOperation;
-import com.mongodb.BulkWriteRequestBuilder;
-import com.mongodb.BulkWriteResult;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.sun.xml.internal.fastinfoset.sax.Properties;
@@ -37,13 +34,13 @@ public class Start {
 	}
 	public static void main(String[] args) 
 	{
-		/*Timer timer = new Timer();
+		Timer timer = new Timer();
 		OneTimeNormalizeCustomerId a =new OneTimeNormalizeCustomerId(timer);
-		timer.schedule(a, 5000);*/
+		timer.schedule(a, 2000);
 		
-		Timer MapOzonetelToCustomerTimer = new Timer();
-		MapOzonetelToCustomer a1 =new MapOzonetelToCustomer(MapOzonetelToCustomerTimer);
-		MapOzonetelToCustomerTimer.schedule(a1, 1000,24*60*60);
+//		Timer MapOzonetelToCustomerTimer = new Timer();
+//		MapOzonetelToCustomer a1 =new MapOzonetelToCustomer(MapOzonetelToCustomerTimer);
+//		MapOzonetelToCustomerTimer.schedule(a1, 1000,24*60*60);
 	}
 }
 	
@@ -55,17 +52,20 @@ public class Start {
 			this.timer=timer;
 		}
 
-		public void run() {
+		public void run() 
+		{
 			System.out.println("Timer task started at:"+new Date());
-
 			TransactionManager transactionManager=new TransactionManager();
-			
 			transactionManager.startTransaction("local");
 			CustomerDao custDao=(CustomerDao)transactionManager.getDatabaseManager("fitadmin").getCollection("customers");
-			
 			TransactionDao transDao=(TransactionDao)transactionManager.getDatabaseManager("fitapi").getCollection("transactions");
 			/*Customer customer=*/
 			DBObject customerData=custDao.getCustomer(1);
+			
+			
+			
+//			System.out.println(topCustID);
+			
 //			System.out.println(transDao.getUncertainTransactions());
 //			daoManager.getDB("fitadmin").getCollection(");
 			DBCursor transCursor=transDao.getUncertainTransactions();
@@ -78,9 +78,15 @@ public class Start {
 				if(custPhone==null||custPhone.equals(""))
 				{
 					System.out.println("NO PHONE EXISTS");
-					String custEmail=(String) currentTransObject.get("customer_email");	
-					DBObject customerDataEmail=custDao.getCustomerBasedOnEmail(custEmail);
-					int cid= (int) customerDataEmail.get("customer_id");
+					String custEmail=(String) currentTransObject.get("customer_email");
+					
+					DBObject customerDataEmail=null;
+					if(custEmail!=null&&!"".equals(custEmail))
+						customerDataEmail=custDao.getCustomerBasedOnEmail(custEmail);
+					Number cid=-1;
+					if(customerDataEmail!=null)
+					cid= (Number) customerDataEmail.get("_id");
+
 					System.out.println(cid);
 					System.out.println("OBJECT ID  "+currentTransObject.get("_id"));
 					transDao.updateTransOnCustomerId(cid,currentTransObject);
@@ -88,7 +94,36 @@ public class Start {
 				else
 				{
 					DBObject customerDataPhone=custDao.getCustomerBasedOnPhone(custPhone);
-					long cid= (long) customerDataPhone.get("_id");
+					Number cid=-1;
+					if(customerDataPhone!=null)
+					cid= (Number) customerDataPhone.get("_id");
+					else
+					{
+						String custEmail=(String) currentTransObject.get("customer_email");
+						DBObject customerDataEmail=null;
+						if(custEmail!=null&&!"".equals(custEmail))
+							customerDataEmail=custDao.getCustomerBasedOnEmail(custEmail);
+						if(customerDataEmail!=null)
+							cid= (Number) customerDataEmail.get("_id");
+						else
+						{
+							if(cid.intValue()==-1)
+							{
+								cid=custDao.getTopCustomerID().intValue()+1;
+								BasicDBObjectBuilder documentBuilder = BasicDBObjectBuilder.start().add("_id", cid);
+								if(currentTransObject.get("customer_name")!=null&&!"".equals(currentTransObject.get("customer_name")))
+									documentBuilder.add("name", currentTransObject.get("customer_name"));
+								if(currentTransObject.get("customer_phone")!=null&&!"".equals(currentTransObject.get("customer_phone")))
+									documentBuilder.add("contact_no", currentTransObject.get("customer_phone"));								
+								if(currentTransObject.get("customer_email")!=null&&!"".equals(currentTransObject.get("customer_email")))
+									documentBuilder.add("email", currentTransObject.get("customer_email"));
+									documentBuilder.add("created_at",new Date());
+									documentBuilder.add("updated_at",new Date());
+									if(!custDao.addNewCustomer(documentBuilder.get()))
+										cid=-1;
+							}
+						}
+					}
 					System.out.println("CID "+cid);
 					System.out.println(currentTransObject.get("_id").toString());
 					transDao.updateTransOnCustomerId(cid,currentTransObject);
@@ -127,9 +162,9 @@ public class Start {
 			while(ozoneTelCursor.hasNext())
 			{	
 				DBObject currentOzoneTelObject=ozoneTelCursor.next();;
-				String custPhone=(String) currentOzoneTelObject.get("customer_cid");
-				if(custPhone!=null&&!custPhone.equals(""))
-				{
+				String custPhone=(String) currentOzoneTelObject.get("customer_contact_no");
+//				if(custPhone!=null&&!custPhone.equals(""))
+//				{
 						DBObject customerData=custDao.getCustomerOnOzoneTel(custPhone);
 				        System.out.println(customerData);
 				        bulkWriteOperation.find(new BasicDBObject("_id",(Number)currentOzoneTelObject.get("_id"))).update((new BasicDBObject("$set", new BasicDBObject("customer exists", (customerData!=null)?true:false))));
@@ -147,7 +182,7 @@ public class Start {
 						// old single update
 //						ozoneTelDao.updateOzoneTelCaptOnCustomerId((customerData!=null)?true:false, currentOzoneTelObject);
 				
-				}
+//				}
 				if(i<5000)
 				{
 					System.out.println(" AFTER 5000" +bulkWriteOperation.execute());

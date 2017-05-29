@@ -38,7 +38,7 @@ public class OzoneTelDao extends BaseCollection
 	}*/
 	public DBCursor getOzoneTelCaps() 
 	{
-		BasicDBObject and_conditions[] = {new BasicDBObject("customer_cid", new BasicDBObject("$exists",true)),new BasicDBObject("customer_cid",new BasicDBObject("$ne","")),new BasicDBObject("customer exists",new BasicDBObject("$exists",false))};
+		BasicDBObject and_conditions[] = {/*new BasicDBObject("customer_contact_no", new BasicDBObject("$exists",true)),new BasicDBObject("customer_contact_no",new BasicDBObject("$ne","")),*/new BasicDBObject("customer exists",new BasicDBObject("$exists",false))};
 		DBObject query = BasicDBObjectBuilder.start()
 				.add("$and", and_conditions).get();
 		DBCursor cursor = collection.find(query);
