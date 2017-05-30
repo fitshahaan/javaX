@@ -22,7 +22,8 @@ public class TransactionManager
 {
 	MongoClient mongoClient ; 
 	String type;
-	DB db; 
+	DB db;
+	boolean isAuthenticated;
 	
 	public MongoClient getConnection(String type) 
 	{
@@ -63,7 +64,8 @@ public class TransactionManager
 			}
 			else if(type.equals("staging"))
 			{
-				this.mongoClient= new MongoClient( "localhost" , 27017 );
+//				this.mongoClient= new MongoClient( "localhost" , 27017 );
+				this.mongoClient= new MongoClient( "35.154.147.1" , 27017 );
 				this.type=type;
 				return 	true;
 			}
@@ -107,8 +109,12 @@ public class TransactionManager
 		System.out.println(type);
 		System.out.println(" databaseManager.getDb().getName() ::  "+databaseManager.getDb().getName());
 		System.out.println(" databaseManager.getDb() ::  "+databaseManager.getDb());
-		if(type.equals("staging"))
+		if(type.equals("staging")&&!isAuthenticated)
+		{
 			databaseManager.getDb().authenticate("fitadmin", "fit1234".toCharArray());
+			isAuthenticated=true;
+		}
+			
 		return databaseManager;
 	}		
 }

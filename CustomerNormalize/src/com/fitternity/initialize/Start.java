@@ -37,14 +37,14 @@ public class Start {
 	}
 
 	public static void main(String[] args) {
-		Timer timer = new Timer();
-		OneTimeNormalizeCustomerId a = new OneTimeNormalizeCustomerId(timer);
-		timer.schedule(a, 2000);
+//		Timer timer = new Timer();
+//		OneTimeNormalizeCustomerId a = new OneTimeNormalizeCustomerId(timer);
+//		timer.schedule(a, 2000);
 
-		// Timer MapOzonetelToCustomerTimer = new Timer();
-		// MapOzonetelToCustomer a1 =new
-		// MapOzonetelToCustomer(MapOzonetelToCustomerTimer);
-		// MapOzonetelToCustomerTimer.schedule(a1, 1000,24*60*60);
+		 Timer MapOzonetelToCustomerTimer = new Timer();
+		 MapOzonetelToCustomer a1 =new
+		 MapOzonetelToCustomer(MapOzonetelToCustomerTimer);
+		 MapOzonetelToCustomerTimer.schedule(a1, 1000,24*60*60);
 	}
 }
 
@@ -151,7 +151,7 @@ class MapOzonetelToCustomer extends TimerTask {
 		System.out.println("Timer task started at:" + new Date());
 		TransactionManager transactionManager = new TransactionManager();
 
-		transactionManager.startTransaction("local");
+		transactionManager.startTransaction("staging");
 		CustomerDao custDao = (CustomerDao) transactionManager.getDatabaseManager("fitadmin")
 				.getCollection("customers");
 		OzoneTelDao ozoneTelDao = (OzoneTelDao) transactionManager.getDatabaseManager("fitadmin")
@@ -162,7 +162,6 @@ class MapOzonetelToCustomer extends TimerTask {
 		int i = 0;
 		while (ozoneTelCursor.hasNext()) {
 			DBObject currentOzoneTelObject = ozoneTelCursor.next();
-			;
 			String custPhone = (String) currentOzoneTelObject.get("customer_contact_no");
 			// if(custPhone!=null&&!custPhone.equals(""))
 			// {
@@ -170,7 +169,7 @@ class MapOzonetelToCustomer extends TimerTask {
 			System.out.println(customerData);
 			bulkWriteOperation.find(new BasicDBObject("_id", (Number) currentOzoneTelObject.get("_id")))
 					.update((new BasicDBObject("$set",
-							new BasicDBObject("customer exists", (customerData != null) ? true : false))));
+							new BasicDBObject("customer_id", (customerData != null) ? (Number)customerData.get("_id") : -1))));
 			i++;
 			System.out.println(i);
 			if (i % 1000 == 0)
@@ -186,7 +185,7 @@ class MapOzonetelToCustomer extends TimerTask {
 		// currentOzoneTelObject);
 
 		// }
-		if (i < 5000) {
+		if (i<5000&&i>0) {
 			System.out.println(" AFTER 5000" + bulkWriteOperation.execute());
 			bulkWriteOperation = ozoneTelDao.getBulkWriteOp();
 		}
