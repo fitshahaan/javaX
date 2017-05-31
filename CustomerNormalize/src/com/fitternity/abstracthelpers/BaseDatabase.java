@@ -2,6 +2,10 @@ package com.fitternity.abstracthelpers;
 
 import com.mongodb.DB;
 
+/**
+ * @author shahaan
+ *
+ */
 public class BaseDatabase 
 {
 	protected DB db ;

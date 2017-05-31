@@ -6,15 +6,15 @@ import java.util.List;
 
 import com.fitternity.abstracthelpers.BaseCollection;
 import com.fitternity.abstracthelpers.BaseDatabase;
-import com.fitternity.constants.Databases;
-import com.fitternity.constants.Environments;
 import com.fitternity.dao.collections.CustomerDao;
 import com.fitternity.dao.collections.OzoneTelDao;
 import com.fitternity.dao.collections.TransactionDao;
 import com.fitternity.dao.collections.VendorDao;
-import com.fitternity.constants.Environments.*;
 import com.fitternity.dao.databases.FitAdmin;
 import com.fitternity.dao.databases.FitApi;
+import com.fitternity.enums.Databases;
+import com.fitternity.enums.Environments;
+import com.fitternity.enums.Environments.*;
 import com.mongodb.DB;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoCredential;

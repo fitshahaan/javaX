@@ -1,7 +1,10 @@
 package com.fitternity.abstracthelpers;
 
 import java.util.Date;
-
+/**
+ * @author Shahaan.Syed
+ *
+ */
 public class BaseBean {
 
 	protected int id;

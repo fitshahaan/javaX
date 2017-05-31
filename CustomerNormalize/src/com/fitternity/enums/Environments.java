@@ -1,5 +1,8 @@
-package com.fitternity.constants;
-
+package com.fitternity.enums;
+/**
+ * @author Shahaan
+ *
+ */
 public enum Environments 
 {
 	STAGING,LOCAL,PRODUCTION;

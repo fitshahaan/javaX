@@ -1,9 +1,10 @@
 package com.fitternity.jobs;
 
-import static com.fitternity.constants.Collections.CUSTOMERS;
-import static com.fitternity.constants.Collections.OZONETELCAPTURES;
-import static com.fitternity.constants.Databases.FITADMIN;
-import static com.fitternity.constants.Environments.STAGING;
+import static com.fitternity.enums.Collections.CUSTOMERS;
+import static com.fitternity.enums.Collections.OZONETELCAPTURES;
+import static com.fitternity.enums.Databases.FITADMIN;
+import static com.fitternity.enums.Environments.STAGING;
+
 import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -15,7 +16,10 @@ import com.mongodb.BasicDBObject;
 import com.mongodb.BulkWriteOperation;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
-
+/**
+ * @author Shahaan
+ *
+ */
 public class OzonetelCustomerMapper extends TimerTask {
 	Timer timer;
 

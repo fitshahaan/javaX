@@ -1,12 +1,12 @@
 package com.fitternity.manager;
 
 import com.fitternity.abstracthelpers.BaseCollection;
-import com.fitternity.constants.Collections;
-import com.fitternity.constants.Databases;
 import com.fitternity.dao.collections.CustomerDao;
 import com.fitternity.dao.collections.OzoneTelDao;
 import com.fitternity.dao.collections.TransactionDao;
 import com.fitternity.dao.collections.VendorDao;
+import com.fitternity.enums.Collections;
+import com.fitternity.enums.Databases;
 import com.mongodb.DB;
 import com.mongodb.MongoClient;
 

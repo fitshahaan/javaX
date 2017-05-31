@@ -1,5 +1,8 @@
-package com.fitternity.constants;
-
+package com.fitternity.enums;
+/**
+ * @author Shahaan
+ *
+ */
 public enum Collections 
 {
 	TRANSACTIONS,CUSTOMERS,VENDORS,OZONETELCAPTURES;

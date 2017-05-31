@@ -1,19 +1,23 @@
 package com.fitternity.jobs;
 
-import static com.fitternity.constants.Environments.*;
+import static com.fitternity.enums.Collections.*;
+import static com.fitternity.enums.Databases.*;
+import static com.fitternity.enums.Environments.*;
+
 import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
-import static com.fitternity.constants.Databases.*;
 
-import static com.fitternity.constants.Collections.*;
 import com.fitternity.dao.collections.CustomerDao;
 import com.fitternity.dao.collections.TransactionDao;
 import com.fitternity.manager.TransactionManager;
 import com.mongodb.BasicDBObjectBuilder;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
-
+/**
+ * @author Shahaan
+ *
+ */
 public class NormalizeCustomerId extends TimerTask {
 	private Timer timer;
 
