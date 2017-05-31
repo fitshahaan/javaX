@@ -1,6 +1,8 @@
 package com.fitternity.manager;
 
 import com.fitternity.abstracthelpers.BaseCollection;
+import com.fitternity.constants.Collections;
+import com.fitternity.constants.Databases;
 import com.fitternity.dao.collections.CustomerDao;
 import com.fitternity.dao.collections.OzoneTelDao;
 import com.fitternity.dao.collections.TransactionDao;
@@ -13,22 +15,22 @@ public class DatabaseManager
 	private DB db; 
 	private MongoClient conn; 
 	
-	public DatabaseManager (MongoClient client,String db)
+	public DatabaseManager (MongoClient client,Databases db)
 	{
 			this.conn=client;
-			setDB(db);
+			setDB(db.toString());
 	}
 	private void setDB(String db) {
 			this.db=this.conn.getDB(db);
 	}
 	
-	public BaseCollection getCollection(String name) 
+	public BaseCollection getCollection(Collections name) 
 	{
 		switch (name) {
-		case "vendors": 	return new VendorDao(db.getCollection(name));
-		case "customers": 	System.out.println(db);return new CustomerDao(db.getCollection(name));
-		case "ozonetelcaptures": 	return new OzoneTelDao(db.getCollection(name));
-		case "transactions": 	return new TransactionDao(db.getCollection(name));
+		case VENDORS: 	return new VendorDao(db.getCollection(name.toString()));
+		case CUSTOMERS: 	System.out.println(db);return new CustomerDao(db.getCollection(name.toString()));
+		case OZONETELCAPTURES: 	return new OzoneTelDao(db.getCollection(name.toString()));
+		case TRANSACTIONS: 	return new TransactionDao(db.getCollection(name.toString()));
 		default:return null;
 		}
 	}
