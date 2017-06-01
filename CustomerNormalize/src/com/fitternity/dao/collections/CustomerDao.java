@@ -8,6 +8,7 @@ import com.fitternity.abstracthelpers.BaseCollection;
 import com.fitternity.dao.beans.Customer;
 import com.mongodb.BasicDBObject;
 import com.mongodb.BasicDBObjectBuilder;
+import com.mongodb.BulkWriteOperation;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
@@ -128,6 +129,10 @@ public class CustomerDao extends BaseCollection
 		return ((collection.insert(dbObject)!=null)?true:false);
 	}
 	
-	
+	public BulkWriteOperation getBulkWriteOp()
+	{
+		BulkWriteOperation  bulkWriteOperation= collection.initializeUnorderedBulkOperation();
+		return bulkWriteOperation;
+	}	
 	
 }

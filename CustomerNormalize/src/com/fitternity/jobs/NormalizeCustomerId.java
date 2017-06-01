@@ -49,7 +49,8 @@ public class NormalizeCustomerId extends TimerTask {
 		// daoManager.getDB("fitadmin").getCollection(");
 		
 		DBCursor transCursor = transDao.getUncertainTransactions();
-		while (transCursor.hasNext()) {
+		while (transCursor.hasNext()) 
+		{
 			DBObject currentTransObject = transCursor.next();
 			System.out.println(" currentTransObject " + currentTransObject);
 			String custPhone = currentTransObject.get("customer_phone") == null?null:""+currentTransObject.get("customer_phone");
@@ -71,20 +72,25 @@ public class NormalizeCustomerId extends TimerTask {
 				System.out.println(cid);
 				System.out.println("OBJECT ID  " + currentTransObject.get("_id"));
 				transDao.updateTransOnCustomerId(cid, currentTransObject);
-			} else {
+			} 
+			else 
+			{
 				DBObject customerDataPhone = custDao.getCustomerBasedOnPhone(custPhone);
 				Number cid = -1;
 				if (customerDataPhone != null)
 					cid = (Number) customerDataPhone.get("_id");
-				else {
+				else 
+				{
 					String custEmail = (String) currentTransObject.get("customer_email");
 					DBObject customerDataEmail = null;
 					if (custEmail != null && !"".equals(custEmail))
 						customerDataEmail = custDao.getCustomerBasedOnEmail(custEmail);
 					if (customerDataEmail != null)
 						cid = (Number) customerDataEmail.get("_id");
-					else {
-						if (cid.intValue() == -1) {
+					else 
+					{
+						if (cid.intValue() == -1) 
+						{
 							cid = custDao.getTopCustomerID().intValue() + 1;
 							BasicDBObjectBuilder documentBuilder = BasicDBObjectBuilder.start().add("_id", cid);
 							if (currentTransObject.get("customer_name") != null&& !"".equals(currentTransObject.get("customer_name")))

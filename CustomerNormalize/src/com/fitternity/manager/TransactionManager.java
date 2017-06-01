@@ -176,7 +176,7 @@ public class TransactionManager implements AppConstants,DBConstants
 		System.out.println(" isAuthenticated "+isAuthenticated);
 		if(Environments.STAGING.equals(env)/*&&!isAuthenticated*/)
 		{
-			databaseManager.getDb().authenticate("fitadmin", "fit1234".toCharArray());
+			databaseManager.getDb().authenticate(PropertiesUtil.getDBConnectionProperty(API_USERNAME), PropertiesUtil.getDBConnectionProperty(API_PASSWORD).toCharArray());
 			isAuthenticated=true;
 		}
 			

@@ -13,10 +13,10 @@ public class PropertiesUtil {
 	private static ResourceBundle cron;
 	static 
 	{
-		 application =ResourceBundle.getBundle("com.fitternity.properties.application");
-		 dbQueries =ResourceBundle.getBundle("com.fitternity.properties.dbQueries");
-		 dbConnection =ResourceBundle.getBundle("com.fitternity.properties.dbConnection");
-		 cron =ResourceBundle.getBundle("com.fitternity.properties.cron");
+		 application =ResourceBundle.getBundle("com.fitternity.settings.application");
+		 dbQueries =ResourceBundle.getBundle("com.fitternity.settings.dbQueries");
+		 dbConnection =ResourceBundle.getBundle("com.fitternity.settings.dbConnection");
+		 cron =ResourceBundle.getBundle("com.fitternity.settings.cron");
 	}
 	/**
 	 * @param prop to get in application settings.

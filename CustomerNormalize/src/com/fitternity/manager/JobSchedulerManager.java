@@ -16,11 +16,12 @@ import com.fitternity.dao.collections.VendorDao;
 import com.fitternity.enums.Jobs;
 import com.fitternity.jobs.NormalizeCustomerId;
 import com.fitternity.jobs.OzonetelCustomerMapper;
+import com.fitternity.jobs.UnsubscribeCustomers;
 import com.fitternity.util.PropertiesUtil;
 import com.mongodb.DB;
 import com.mongodb.MongoClient;
 import com.mongodb.util.Hash;
-
+import static com.fitternity.enums.Jobs.UNSUBSCRIBECUSTOMERS;
 /**
  * @author shahaan
  *
@@ -77,6 +78,19 @@ public class JobSchedulerManager  implements CronConstants,AppConstants
 											timer.schedule(ozonetelCustomerMapper, initDelay,scheduleTime);
 											return timer;
 										}
+									 
+		case UNSUBSCRIBECUSTOMERS:
+			 UnsubscribeCustomers unsubscribeCustomers =new UnsubscribeCustomers(timer);
+			 if(scheduleTime==null||scheduleTime<0)
+				{
+				 	timer.schedule(unsubscribeCustomers, initDelay);
+					return timer;	
+				}
+				else
+				{
+					timer.schedule(unsubscribeCustomers, initDelay,scheduleTime);
+					return timer;
+				}
 		default:
 									break;
 		
@@ -94,17 +108,21 @@ public class JobSchedulerManager  implements CronConstants,AppConstants
 		HashMap<Jobs, Timer> timersScheduled=new HashMap<>();
 		if(Boolean.parseBoolean(PropertiesUtil.getAppProperty(NORM_CUST_JOB)))
 		{
-			Timer NormalizeCustomerIdtimer =scheduleJob(NORMALIZECUSTOMERID, 
-					Long.parseLong(PropertiesUtil.getCronProperty(NORM_CUST_ID_INIT_DELAY)), 
-					Long.parseLong(PropertiesUtil.getCronProperty(NORM_CUST_ID_PERIOD)));
-			timersScheduled.put(NORMALIZECUSTOMERID,NormalizeCustomerIdtimer);
+							timersScheduled.put(NORMALIZECUSTOMERID,scheduleJob(NORMALIZECUSTOMERID, 
+							Long.parseLong(PropertiesUtil.getCronProperty(NORM_CUST_ID_INIT_DELAY)), 
+							Long.parseLong(PropertiesUtil.getCronProperty(NORM_CUST_ID_PERIOD))));
 		}
 		if(Boolean.parseBoolean(PropertiesUtil.getAppProperty(OZONE_MAP_JOB)))
 		{
-		Timer ozoneTelCustMaptimer =scheduleJob(OZONETELCUSTOMERMAPPER, 
-									Long.parseLong(PropertiesUtil.getCronProperty(OZO_CUST_MAPID_INIT_DELAY)), 
-									Long.parseLong(PropertiesUtil.getCronProperty(OZO_CUST_MAPID_PERIOD)));
-								timersScheduled.put(Jobs.OZONETELCUSTOMERMAPPER,ozoneTelCustMaptimer);
+							timersScheduled.put(Jobs.OZONETELCUSTOMERMAPPER,scheduleJob(OZONETELCUSTOMERMAPPER, 
+							Long.parseLong(PropertiesUtil.getCronProperty(OZO_CUST_MAPID_INIT_DELAY)), 
+							Long.parseLong(PropertiesUtil.getCronProperty(OZO_CUST_MAPID_PERIOD))));
+		}
+		if(Boolean.parseBoolean(PropertiesUtil.getAppProperty(UNSUBSCRIBE_CUST)))
+		{
+					        timersScheduled.put(UNSUBSCRIBECUSTOMERS,scheduleJob(UNSUBSCRIBECUSTOMERS, 
+							Long.parseLong(PropertiesUtil.getCronProperty(UNSUB_CUST_INIT_DELAY)), 
+							Long.parseLong(PropertiesUtil.getCronProperty(UNSUB_CUST_PERIOD))));
 		}
 		return timersScheduled;
 	}
