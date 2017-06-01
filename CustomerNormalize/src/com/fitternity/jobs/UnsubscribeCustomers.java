@@ -54,7 +54,7 @@ public class UnsubscribeCustomers extends TimerTask {
 		BulkWriteOperation bulkWriteOperation = custDao.getBulkWriteOp();
 		try 
 		{
-			System.out.println("HI "+new File(System.getProperty("user.dir")+"/input/Unsubscribe Customers/Unsubsrcibe List - Sheet1.csv").getName());
+//			System.out.println("HI "+new File(System.getProperty("user.dir")+"/input/Unsubscribe Customers/Unsubsrcibe List - Sheet1.csv").getName());
 			BufferedReader br=new BufferedReader(new FileReader(new File(System.getProperty("user.dir")+"/input/Unsubscribe Customers/Unsubsrcibe List - Sheet1.csv")));
 			String line="";
 			HashSet<String> emails=new HashSet<>();
@@ -80,6 +80,7 @@ public class UnsubscribeCustomers extends TimerTask {
 			if (counter<5000&&counter>0) 
 			{
 				updateInDB(emails,bulkWriteOperation);
+				custDao.updateSubscribedCustomers();
 //				counter=0;
 			}
 		} 
@@ -90,7 +91,7 @@ public class UnsubscribeCustomers extends TimerTask {
 		}
 	}
 	
-	
+
 	private void updateInDB(HashSet<String> emails,BulkWriteOperation bulkWriteOperation)
 	{
 		bulkWriteOperation = custDao.getBulkWriteOp();

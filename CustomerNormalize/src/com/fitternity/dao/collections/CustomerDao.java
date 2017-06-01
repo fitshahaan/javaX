@@ -133,6 +133,19 @@ public class CustomerDao extends BaseCollection
 	{
 		BulkWriteOperation  bulkWriteOperation= collection.initializeUnorderedBulkOperation();
 		return bulkWriteOperation;
+	}
+	public void updateSubscribedCustomers() 
+	{
+		DBObject query = BasicDBObjectBuilder.start().add("unsubscribed_customer", new BasicDBObject("$exists", false)).get();
+		System.out.println("query "+query);
+		DBObject updateSet=BasicDBObjectBuilder.start().add("$set", new BasicDBObject("unsubscribed_customer",false)).get();
+		WriteResult cursor = collection.updateMulti(query,updateSet);
+//		System.out.println("getCustomerBasedOnPhone size  "+cursor.keySet().size());
+//		System.out.println("getCustomerBasedOnPhone id  "+cursor.get("_id"));
+		System.out.println(cursor.getUpsertedId());
+		System.out.println(cursor.getN());
+		System.out.println(cursor.isUpdateOfExisting());
+		System.out.println(cursor.getLastConcern());
 	}	
 	
 }
