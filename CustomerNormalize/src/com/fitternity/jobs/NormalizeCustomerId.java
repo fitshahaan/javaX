@@ -8,9 +8,13 @@ import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import com.fitternity.constants.AppConstants;
 import com.fitternity.dao.collections.CustomerDao;
 import com.fitternity.dao.collections.TransactionDao;
+import com.fitternity.enums.Environments;
+import com.fitternity.enums.Environments.*;
 import com.fitternity.manager.TransactionManager;
+import com.fitternity.util.PropertiesUtil;
 import com.mongodb.BasicDBObjectBuilder;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
@@ -29,7 +33,8 @@ public class NormalizeCustomerId extends TimerTask {
 	public void run() {
 		System.out.println("Timer task started at:" + new Date());
 		TransactionManager transactionManager = new TransactionManager();
-		transactionManager.startTransaction(STAGING);
+		transactionManager.startTransaction();
+		
 //		transactionManager.endTransaction();
 		CustomerDao custDao = (CustomerDao) transactionManager.getDatabaseManager(FITADMIN).getCollection(CUSTOMERS);
 		System.out.println("custDao :: " + custDao);
@@ -42,6 +47,7 @@ public class NormalizeCustomerId extends TimerTask {
 
 		// System.out.println(transDao.getUncertainTransactions());
 		// daoManager.getDB("fitadmin").getCollection(");
+		
 		DBCursor transCursor = transDao.getUncertainTransactions();
 		while (transCursor.hasNext()) {
 			DBObject currentTransObject = transCursor.next();
@@ -104,5 +110,6 @@ public class NormalizeCustomerId extends TimerTask {
 		System.out.println("Timer task finished at:" + new Date());
 		timer.cancel();
 	}
+
 
 }

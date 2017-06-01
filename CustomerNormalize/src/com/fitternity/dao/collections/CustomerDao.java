@@ -13,6 +13,10 @@ import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.WriteResult;
 
+/**
+ * @author shahaan
+ *
+ */
 public class CustomerDao extends BaseCollection
 {
 	DBCollection collection;
@@ -85,10 +89,10 @@ public class CustomerDao extends BaseCollection
 		 BasicDBObject regexQuery = new BasicDBObject();
 		    regexQuery.put("contact_no",new BasicDBObject("$regex", contactNo).append("$options", "i"));
 
-		System.out.println("query "+regexQuery);
+		System.out.println("[ getCustomerOnOzoneTel ] query "+regexQuery);
 		
 		DBObject cursor = collection.findOne(regexQuery);
-		System.out.println("getCustomerBasedOnPhone size  "+cursor);
+		System.out.println("[ getCustomerOnOzoneTel]  size  "+cursor);
 //		System.out.println("getCustomerBasedOnPhone id  "+cursor.get("_id"));
 		return cursor;
 	}

@@ -3,6 +3,10 @@ package com.fitternity.dao.beans;
 import com.fitternity.abstracthelpers.BaseCollection;
 import com.mongodb.DBCollection;
 
+/**
+ * @author shahaan
+ *
+ */
 public class Vendor extends BaseCollection
 {
 	DBCollection collection;

@@ -1,6 +1,10 @@
 package com.fitternity.util;
 
 import java.util.ResourceBundle;
+/**
+ * @author shahaan
+ *
+ */
 public class PropertiesUtil {
 	
 	private static ResourceBundle application;
@@ -14,21 +18,25 @@ public class PropertiesUtil {
 		 dbConnection =ResourceBundle.getBundle("com.fitternity.properties.dbConnection");
 		 cron =ResourceBundle.getBundle("com.fitternity.properties.cron");
 	}
+	/**
+	 * @param prop to get in application settings.
+	 * @return key present in application settings.
+	 */
 	public static String getAppProperty(String prop)
 	{
-		return application.getString(prop);
+		return application.getString(prop).trim();
 	}
 	public static String getDBQueryProperty(String prop)
 	{
-		return dbQueries.getString(prop);
+		return dbQueries.getString(prop).trim();
 	}
 	public static String getDBConnectionProperty(String prop)
 	{
-		return dbConnection.getString(prop);
+		return dbConnection.getString(prop).trim();
 	}
 	public static String getCronProperty(String prop)
 	{
-		return cron.getString(prop);
+		return cron.getString(prop).trim();
 	}
 	
 }

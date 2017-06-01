@@ -10,11 +10,23 @@ import com.fitternity.enums.Databases;
 import com.mongodb.DB;
 import com.mongodb.MongoClient;
 
+/**
+ * @author shahaan
+ *
+ */
 public class DatabaseManager 
 {
 	private DB db; 
+	@Override
+	public String toString() {
+		return "DatabaseManager [db=" + db + ", conn=" + conn + "]";
+	}
 	private MongoClient conn; 
 	
+	/**
+	 * @param client
+	 * @param db
+	 */
 	public DatabaseManager (MongoClient client,Databases db)
 	{
 			this.conn=client;
@@ -24,6 +36,16 @@ public class DatabaseManager
 			this.db=this.conn.getDB(db);
 	}
 	
+	public MongoClient getConn() {
+		return conn;
+	}
+	public void setConn(MongoClient conn) {
+		this.conn = conn;
+	}
+	/**
+	 * @param name
+	 * @return
+	 */
 	public BaseCollection getCollection(Collections name) 
 	{
 		switch (name) {

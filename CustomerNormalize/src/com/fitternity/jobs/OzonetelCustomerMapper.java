@@ -32,7 +32,7 @@ public class OzonetelCustomerMapper extends TimerTask {
 		System.out.println("Timer task started at:" + new Date());
 		TransactionManager transactionManager = new TransactionManager();
 
-		transactionManager.startTransaction(STAGING);
+		transactionManager.startTransaction();
 		CustomerDao custDao = (CustomerDao) transactionManager.getDatabaseManager(FITADMIN).getCollection(CUSTOMERS);
 		OzoneTelDao ozoneTelDao = (OzoneTelDao) transactionManager.getDatabaseManager(FITADMIN).getCollection(OZONETELCAPTURES);
 

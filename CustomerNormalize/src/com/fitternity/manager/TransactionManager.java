@@ -1,11 +1,16 @@
 package com.fitternity.manager;
 
+import static com.fitternity.enums.Environments.LOCAL;
+import static com.fitternity.enums.Environments.PRODUCTION;
+import static com.fitternity.enums.Environments.STAGING;
+
 import java.net.UnknownHostException;
-import java.util.ArrayList;
 import java.util.List;
 
 import com.fitternity.abstracthelpers.BaseCollection;
 import com.fitternity.abstracthelpers.BaseDatabase;
+import com.fitternity.constants.AppConstants;
+import com.fitternity.constants.DBConstants;
 import com.fitternity.dao.collections.CustomerDao;
 import com.fitternity.dao.collections.OzoneTelDao;
 import com.fitternity.dao.collections.TransactionDao;
@@ -14,64 +19,97 @@ import com.fitternity.dao.databases.FitAdmin;
 import com.fitternity.dao.databases.FitApi;
 import com.fitternity.enums.Databases;
 import com.fitternity.enums.Environments;
-import com.fitternity.enums.Environments.*;
+import com.fitternity.util.PropertiesUtil;
 import com.mongodb.DB;
 import com.mongodb.MongoClient;
-import com.mongodb.MongoCredential;
-import com.mongodb.ServerAddress;
 
-public class TransactionManager 
+/**
+ * @author shahaan
+ *
+ */
+public class TransactionManager implements AppConstants,DBConstants
 
 {
-	MongoClient mongoClient ; 
-	Environments type;
-	DB db;
-	boolean isAuthenticated;
+	private MongoClient mongoClient ; 
+	private Environments env;
+	private DB db;
+	private boolean isAuthenticated;
 	
-	/*public MongoClient getConnection(String type) 
-	{
-			// TODO Auto-generated method stub
-		try 
-		{
-			if(type.equals("local"))
-			{
-				this.mongoClient= new MongoClient( "localhost" , 27017 );
-				return 	this.mongoClient;			
-			}
-			else
-			{
-				MongoCredential journaldevAuth = MongoCredential.createPlainCredential("pankaj", "journaldev", "pankaj123".toCharArray());
-//				MongoCredential testAuth = MongoCredential.createPlainCredential("pankaj", "test", "pankaj123".toCharArray());
-				ArrayList<MongoCredential> auths=new ArrayList<>();
-				auths.add(journaldevAuth);
-				MongoClient mongo = new MongoClient(new ServerAddress("35.154.147.1", 27017), auths);
-				return 	this.mongoClient;
-			}
-		}
-		catch (UnknownHostException e) 
-		{
-			e.printStackTrace();
-			return null;
-		}
-	}*/
-	public void startTransaction(Environments type)
-	{
 	
+	private void setEnvironment()
+	{
+		if(PropertiesUtil.getAppProperty(ENVIRONMENT).equalsIgnoreCase(LOCAL.toString()))
+			this.env=LOCAL;
+		if(PropertiesUtil.getAppProperty(ENVIRONMENT).equalsIgnoreCase(STAGING.toString()))
+			this.env=STAGING;
+		if(PropertiesUtil.getAppProperty(ENVIRONMENT).equalsIgnoreCase(PRODUCTION.toString()))
+			this.env=PRODUCTION;
+	}
+	
+	
+	@Override
+	public String toString() {
+		return "TransactionManager [mongoClient=" + mongoClient + ", env=" + env + ", db=" + db + ", isAuthenticated="
+				+ isAuthenticated + "]";
+	}
+
+
+	public MongoClient getMongoClient() {
+		return mongoClient;
+	}
+
+
+	public void setMongoClient(MongoClient mongoClient) {
+		this.mongoClient = mongoClient;
+	}
+
+
+	public Environments getEnv() {
+		return env;
+	}
+
+
+	public void setEnv(Environments env) {
+		this.env = env;
+	}
+
+
+	public DB getDb() {
+		return db;
+	}
+
+
+	public void setDb(DB db) {
+		this.db = db;
+	}
+
+
+	public boolean isAuthenticated() {
+		return isAuthenticated;
+	}
+
+
+	public void setAuthenticated(boolean isAuthenticated) {
+		this.isAuthenticated = isAuthenticated;
+	}
+
+
+	public void startTransaction()
+	{
+						setEnvironment();
 		try {
-			switch (type)
+			switch (this.env)
 			{
-			case LOCAL:  this.mongoClient= new MongoClient( "localhost" , 27017 );
-						 this.type=type;
+			case LOCAL:  this.mongoClient= new MongoClient(PropertiesUtil.getDBConnectionProperty(API_HOST), Integer.parseInt(PropertiesUtil.getDBConnectionProperty(API_PORT)));
 						 break;
 			case STAGING:
-						this.mongoClient= new MongoClient( "35.154.147.1" , 27017 );
-						this.type=type;
+						this.mongoClient= new MongoClient( PropertiesUtil.getDBConnectionProperty(API_HOST) ,Integer.parseInt(PropertiesUtil.getDBConnectionProperty(API_PORT)));
 						break;
 			case PRODUCTION:
-						break;
-			default: this.mongoClient= new MongoClient( "localhost" , 27017 );
-					 this.type=type;
-					 break;
+							this.mongoClient= new MongoClient( PropertiesUtil.getDBConnectionProperty(API_HOST) , Integer.parseInt(PropertiesUtil.getDBConnectionProperty(API_PORT)));
+							 break;
+			default: this.mongoClient= new MongoClient( PropertiesUtil.getDBConnectionProperty(API_HOST), Integer.parseInt(PropertiesUtil.getDBConnectionProperty(API_PORT)));
+					 	break;
 			}
 		} catch (UnknownHostException e) {
 			
@@ -131,12 +169,12 @@ public class TransactionManager
 	{
 		System.out.println(" this.mongoClient ::  "+this.mongoClient);
 		DatabaseManager databaseManager=new DatabaseManager(this.mongoClient,db);
-		System.out.println(type);
+		System.out.println(env);
 		System.out.println(" databaseManager.getDb().getName() ::  "+databaseManager.getDb().getName());
 		System.out.println(" databaseManager.getDb() ::  "+databaseManager.getDb());
-		System.out.println(" Environments.STAGING.equals(type) "+Environments.STAGING.equals(type));
+		System.out.println(" Environments.STAGING.equals(type) "+Environments.STAGING.equals(env));
 		System.out.println(" isAuthenticated "+isAuthenticated);
-		if(Environments.STAGING.equals(type)/*&&!isAuthenticated*/)
+		if(Environments.STAGING.equals(env)/*&&!isAuthenticated*/)
 		{
 			databaseManager.getDb().authenticate("fitadmin", "fit1234".toCharArray());
 			isAuthenticated=true;

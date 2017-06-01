@@ -14,6 +14,10 @@ import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.WriteResult;
 
+/**
+ * @author shahaan
+ *
+ */
 public class TransactionDao extends BaseCollection
 {
 	DBCollection collection;

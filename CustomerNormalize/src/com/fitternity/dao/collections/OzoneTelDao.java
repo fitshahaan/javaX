@@ -20,6 +20,10 @@ import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.WriteResult;
 
+/**
+ * @author shahaan
+ *
+ */
 public class OzoneTelDao extends BaseCollection
 {
 	DBCollection collection;
