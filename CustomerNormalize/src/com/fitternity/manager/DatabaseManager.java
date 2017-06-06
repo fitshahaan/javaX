@@ -1,7 +1,10 @@
 package com.fitternity.manager;
 
 import com.fitternity.abstracthelpers.BaseCollection;
+import com.fitternity.dao.collections.CityDao;
 import com.fitternity.dao.collections.CustomerDao;
+import com.fitternity.dao.collections.LocationClusterDao;
+import com.fitternity.dao.collections.LocationDao;
 import com.fitternity.dao.collections.OzoneTelDao;
 import com.fitternity.dao.collections.TransactionDao;
 import com.fitternity.dao.collections.VendorDao;
@@ -53,6 +56,9 @@ public class DatabaseManager
 		case CUSTOMERS: 	System.out.println(db);return new CustomerDao(db.getCollection(name.toString()));
 		case OZONETELCAPTURES: 	return new OzoneTelDao(db.getCollection(name.toString()));
 		case TRANSACTIONS: 	return new TransactionDao(db.getCollection(name.toString()));
+		case LOCATIONS: 	return new LocationDao(db.getCollection(name.toString()));
+		case LOCATIONCLUSTERS: 	return new LocationClusterDao(db.getCollection(name.toString()));
+		case CITIES: 	return new CityDao(db.getCollection(name.toString()));
 		default:return null;
 		}
 	}

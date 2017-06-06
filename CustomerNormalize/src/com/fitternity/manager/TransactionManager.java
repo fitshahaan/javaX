@@ -97,6 +97,7 @@ public class TransactionManager implements AppConstants,DBConstants
 	public void startTransaction()
 	{
 						setEnvironment();
+						System.out.println(" THIS ENV :: "+this.env);
 		try {
 			switch (this.env)
 			{

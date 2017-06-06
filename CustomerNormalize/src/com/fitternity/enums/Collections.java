@@ -5,7 +5,7 @@ package com.fitternity.enums;
  */
 public enum Collections 
 {
-	TRANSACTIONS,CUSTOMERS,VENDORS,OZONETELCAPTURES;
+	TRANSACTIONS,CUSTOMERS,VENDORS,OZONETELCAPTURES,CITIES,LOCATIONS,LOCATIONCLUSTERS;
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
