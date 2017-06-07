@@ -48,7 +48,6 @@ public class GoogleApiServices extends FitternityApiService implements AppConsta
 										e.printStackTrace();
 			}
 						
-
 				default:
 							break;
 		}	

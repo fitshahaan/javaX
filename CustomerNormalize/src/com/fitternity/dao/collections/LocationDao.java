@@ -177,6 +177,22 @@ public class LocationDao extends BaseCollection
 		System.out.println(cursor.getN());
 		System.out.println(cursor.isUpdateOfExisting());
 		System.out.println(cursor.getLastConcern());
-	}	
+	}
+	public DBCursor getAllIncorrectLocations() {
+		// TODO Auto-generated method stub
+		
+			DBObject query = BasicDBObjectBuilder.start().add("geometry.coordinates.0", new BasicDBObject("$exists",false)).get();
+			DBCursor cursor = collection.find(query);
+//			while(cursor.hasNext()){	
+			return cursor;
+		}
+	public DBCursor getAllLocations() {
+		// TODO Auto-generated method stub
+		
+			DBObject query = BasicDBObjectBuilder.start().add("geometry.coordinates.0", new BasicDBObject("$exists",true)).get();
+			DBCursor cursor = collection.find(query);
+//			while(cursor.hasNext()){	
+			return cursor;
+		}	
 	
 }

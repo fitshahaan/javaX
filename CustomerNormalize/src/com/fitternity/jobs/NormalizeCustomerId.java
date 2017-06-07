@@ -127,12 +127,13 @@ public class NormalizeCustomerId extends TimerTask {
 			if(FitConstants.CUSTOMER_JOB.equalsIgnoreCase(PropertiesUtil.getAppProperty(AppConstants.CRON_JOB))&&job==null)
 				{
 					reverseMigrateApiServices.startCustomerCron(PropertiesUtil.getAppProperty(AppConstants.CRON_JOB));			
-					job=PropertiesUtil.getAppProperty(AppConstants.CRON_JOB);
+					job=FitConstants.TRANSACTION_JOB;
 				}
 			else
 			{
-				reverseMigrateApiServices.startCustomerCron(PropertiesUtil.getAppProperty(AppConstants.CRON_JOB));
+				reverseMigrateApiServices.startCustomerCron(job);
 			}
+			System.out.println(" job "+job);
 			System.out.println("CRON JOB RESPONSE AT  :" + new Date());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
