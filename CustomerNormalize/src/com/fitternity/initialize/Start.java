@@ -35,9 +35,15 @@ public class Start
 	public static void main(String[] args) 
 	{	
 			System.out.println(JobSchedulerManager.processJobs()+" JOBS STARTED AND SCHEDULED.");
-			
+//			JobSchedulerManager.processJobs();
 //			System.out.println(new GoogleApiServices().googleGeoCodeOutput("jamia nagar")+" JOBS STARTED AND SCHEDULED.");
-			addNewLocations();
+
+			
+			
+			
+			//			ReverseMigrateApiServices reverseMigrateApiServices=new ReverseMigrateApiServices();
+//			reverseMigrateApiServices.startCustomerCron();
+//			addNewLocations();
 //		System.out.println(Boolean.parseBoolean(PropertiesUtil.getAppProperty(NORM_CUST_JOB)));
 	}
 	
@@ -148,6 +154,7 @@ public class Start
 									append("locationcluster_id", locationcluster_id.intValue()).
 									append("name",currentData[1] ).
 									append("updated_at", new Date()).
+									append("hidden", false).
 									append("vendors", new int[0]).
 									append("location_group", (currentData[4]!=null&&!"".equalsIgnoreCase(currentData[4]))?currentData[4].trim().toLowerCase():"general").
 									append("slug",vendorSlug)
@@ -168,6 +175,7 @@ public class Start
 								append("name",currentData[1] ).
 								append("created_at", new Date()).
 								append("updated_at", new Date()).
+								append("hidden", false).
 								append("_id",id).
 								append("vendors", new int[0]).
 								append("location_group", (currentData[4]!=null&&!"".equalsIgnoreCase(currentData[4]))?currentData[4].toLowerCase():"general").

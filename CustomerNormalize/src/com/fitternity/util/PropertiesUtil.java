@@ -26,6 +26,7 @@ public class PropertiesUtil {
 	{
 		return application.getString(prop).trim();
 	}
+	
 	public static String getDBQueryProperty(String prop)
 	{
 		return dbQueries.getString(prop).trim();

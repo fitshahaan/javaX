@@ -18,4 +18,8 @@ public interface AppConstants
 	
 	String GOOGLE_GEO_API_KEY="apiGeoCodekey";
 	
+	String CRON_JOB="cronJob";
+	
+	String CRON_START_API="cronStartApi";
+	
 }

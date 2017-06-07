@@ -1,29 +1,35 @@
 package com.fitternity.jobs;
 
-import static com.fitternity.enums.Collections.*;
-import static com.fitternity.enums.Databases.*;
-import static com.fitternity.enums.Environments.*;
+import static com.fitternity.enums.Collections.CUSTOMERS;
+import static com.fitternity.enums.Collections.TRANSACTIONS;
+import static com.fitternity.enums.Databases.FITADMIN;
+import static com.fitternity.enums.Databases.FITAPI;
 
 import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 
 import com.fitternity.constants.AppConstants;
+import com.fitternity.constants.FitConstants;
+import com.fitternity.dao.beans.Customer;
 import com.fitternity.dao.collections.CustomerDao;
 import com.fitternity.dao.collections.TransactionDao;
-import com.fitternity.enums.Environments;
-import com.fitternity.enums.Environments.*;
 import com.fitternity.manager.TransactionManager;
+import com.fitternity.services.ReverseMigrateApiServices;
 import com.fitternity.util.PropertiesUtil;
 import com.mongodb.BasicDBObjectBuilder;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
+
 /**
  * @author Shahaan
  *
  */
 public class NormalizeCustomerId extends TimerTask {
 	private Timer timer;
+	
+	private String job;
+	private ReverseMigrateApiServices reverseMigrateApiServices=new ReverseMigrateApiServices();
 
 	public NormalizeCustomerId(Timer timer) {
 		// TODO Auto-generated constructor stub
@@ -40,7 +46,6 @@ public class NormalizeCustomerId extends TimerTask {
 		System.out.println("custDao :: " + custDao);
 		TransactionDao transDao = (TransactionDao) transactionManager.getDatabaseManager(FITAPI).getCollection(TRANSACTIONS);
 		System.out.println("transDao :: " + transDao);
-		/* Customer customer= */
 		// DBObject customerData=custDao.getCustomer(1);
 
 		// System.out.println(topCustID);
@@ -58,7 +63,7 @@ public class NormalizeCustomerId extends TimerTask {
 			System.out.println(" cust phone " + custPhone);
 			System.out.println(" cust phone " + custPhone instanceof String);
 			// System.out.println(" cust phone "+String.valueOf(custPhone));
-			if (custPhone == null|| custPhone.equals("")/* ||custPhone.equals("null") */) {
+			if (custPhone == null|| custPhone.equals("") ||custPhone.equals("null") ) {
 				System.out.println("NO PHONE EXISTS");
 				String custEmail = currentTransObject.get("customer_email") == null?null:""+currentTransObject.get("customer_email");;
 
@@ -114,7 +119,27 @@ public class NormalizeCustomerId extends TimerTask {
 		}
 
 		System.out.println("Timer task finished at:" + new Date());
-		timer.cancel();
+	
+		try {
+			System.out.println("CRON JOB STARTED AT :" + new Date());
+			System.out.println(" PropertiesUtil.getAppProperty(cronJob) "+PropertiesUtil.getAppProperty(AppConstants.CRON_JOB));
+			System.out.println(" job "+job);
+			if(FitConstants.CUSTOMER_JOB.equalsIgnoreCase(PropertiesUtil.getAppProperty(AppConstants.CRON_JOB))&&job==null)
+				{
+					reverseMigrateApiServices.startCustomerCron(PropertiesUtil.getAppProperty(AppConstants.CRON_JOB));			
+					job=PropertiesUtil.getAppProperty(AppConstants.CRON_JOB);
+				}
+			else
+			{
+				reverseMigrateApiServices.startCustomerCron(PropertiesUtil.getAppProperty(AppConstants.CRON_JOB));
+			}
+			System.out.println("CRON JOB RESPONSE AT  :" + new Date());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("ERROR :: "+e);
+			e.printStackTrace();
+		}
+		
 	}
 
 

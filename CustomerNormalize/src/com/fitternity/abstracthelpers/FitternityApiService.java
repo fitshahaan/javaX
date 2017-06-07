@@ -85,6 +85,61 @@ public abstract class FitternityApiService
 
 	}
 	
+
+
+protected String sendGet(String url1,String type1) throws Exception {
+
+	String nullFragment = null;
+	URL url = new URL(url1);
+	System.out.println(" url  " +url.getProtocol());
+	System.out.println(" url  " +url.toString());
+	System.out.println(" url  " +url.toURI());
+    
+//	URI uri = new URI(url.getProtocol(), url.getHost(), url.getPath(), url.getQuery(), nullFragment);
+	URI uri = url.toURI();
+    HttpClient client = new DefaultHttpClient();
+	
+	HttpGet request = new HttpGet(uri.toString());
+
+	// add request header
+	//	request.addHeader("User-Agent", "");
+
+	System.out.println("url1 :: "+url1);
+	System.out.println("request:: "+request);
+	
+	System.out.println("  uri.toString()  :: "+uri.toString());
+	HttpResponse response = client.execute(request);
+	System.out.println("resp :: "+response);
+	BufferedReader rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+	StringBuffer result = new StringBuffer();
+	String line = "";
+	while ((line = rd.readLine()) != null) {
+		result.append(line);
+	}
+//	System.out.println(result.toString());
+	return result.toString();
+
+}
+
+
+	
 	protected abstract JSONObject processData(String data,GoogleApis api);
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

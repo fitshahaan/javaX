@@ -43,7 +43,7 @@ public class TransactionDao extends BaseCollection
 //		basicDBObjects.add(new BasicDBObject("customer_id",new BasicDBObject("$type", 2)));
 		//basicDBObjects.add(new BasicDBObject("$type", 2));
 		
-		BasicDBObject orConds[] = {new BasicDBObject("customer_id", new BasicDBObject("$type", 2)),new BasicDBObject("customer_id", new BasicDBObject("$eq", -1)),new BasicDBObject("customer_id", new BasicDBObject("$exists", false))/*,new BasicDBObject("$where", "this.customer_id.length>5")*/};
+		BasicDBObject orConds[] = {new BasicDBObject("customer_id", new BasicDBObject("$type", 2))/*,new BasicDBObject("customer_id", new BasicDBObject("$eq", -1))*/,new BasicDBObject("customer_id", new BasicDBObject("$exists", false))/*,new BasicDBObject("$where", "this.customer_id.length>5")*/};
 //		BasicDBObject orConds[] = {new BasicDBObject("customer_id", 89609)};
 		//query = new BasicDBObject("$or", or_conditions);
 		DBObject query = BasicDBObjectBuilder.start().add("$or", orConds).get();
