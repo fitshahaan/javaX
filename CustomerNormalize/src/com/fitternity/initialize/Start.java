@@ -223,16 +223,17 @@ public class Start
 	
 	public static void fetchIncorrectLocations()
 	{
-		
 		try
 		{
 			File a=new File(System.getProperty("user.dir")+"/vendors.txt");
 			FileWriter fw=new FileWriter(a);
+			fw.write("ID-NAME-CITY,LOCATION"+System.lineSeparator());
 			GoogleApiServices googleApiServices=new GoogleApiServices();
 			TransactionManager transactionManager = new TransactionManager();
 			transactionManager.startTransaction();
 			LocationDao locationDao = (LocationDao) transactionManager.getDatabaseManager(Databases.FITAPI).getCollection(Collections.LOCATIONS);
 			VendorDao vendorDao = (VendorDao) transactionManager.getDatabaseManager(Databases.FITAPI).getCollection(Collections.VENDORS);
+			CityDao cityDao = (CityDao) transactionManager.getDatabaseManager(Databases.FITAPI).getCollection(Collections.CITIES);
 			
 			DBCursor incorrectLocationCursor=locationDao.getAllIncorrectLocations();
 			Number lat=-1;
@@ -259,13 +260,14 @@ public class Start
 				System.out.println("locationInsertCounter :: "+locationInsertCounter);
 				}
 			}
-			System.out.println("locationCoordinates Insert  "+bulkWriteOperation.execute());
-			bulkWriteOperation=locationDao.getBulkWriteOp();
+//			System.out.println("locationCoordinates Insert  "+bulkWriteOperation.execute());
+//			bulkWriteOperation=locationDao.getBulkWriteOp();
 			
 			DBCursor incorrectSecondaryLocationsCursor=vendorDao.getSingularSecondaryLocations();
 			DBCursor incorrectAllLocationsCursor=locationDao.getAllLocations();
 			
 			HashMap<Number, BasicDBList> idToLocs=new HashMap<>();
+			HashMap<Number, String> idToName=new HashMap<>();
 			while(incorrectAllLocationsCursor.hasNext())
 			{
 				DBObject currentLocation=incorrectAllLocationsCursor.next();			
@@ -274,9 +276,11 @@ public class Start
 					DBObject coordinates=(DBObject)currentLocation.get("geometry");
 					if(coordinates!=null)
 					{
+						
 						Number idNumber=(Number)currentLocation.get("_id");
 						int id=idNumber.intValue();
 						idToLocs.put(id, (BasicDBList)coordinates.get("coordinates"));
+						idToName.put(id, (String)currentLocation.get("name"));
 					}
 				}
 					
@@ -322,7 +326,7 @@ public class Start
 						
 						if(Haversine.distance(startLat, startLong, endLat, endLong)>=3)
 						{
-							fw.write(currentVendor.get("_id")+"-"+currentVendor.get("name")+System.lineSeparator());
+							fw.write(currentVendor.get("_id")+"-"+currentVendor.get("name")+"-"+cityDao.getCity((Number)currentVendor.get("city_id")).get("name")+"-"+idToName.get(numLoc.intValue())+System.lineSeparator());
 							System.out.println("IHAR AAYA");
 						}
 						
@@ -341,6 +345,7 @@ public class Start
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 	}	
 	
 	

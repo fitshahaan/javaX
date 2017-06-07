@@ -35,6 +35,12 @@ public class CityDao extends BaseCollection
 		DBObject dbObject= collection.findOne(regexQuery);
 		return dbObject;
 	}
+	public DBObject getCity(final Number city) {
+		 BasicDBObject regexQuery = new BasicDBObject();
+		    regexQuery.put("_id",city);
+		DBObject dbObject= collection.findOne(regexQuery);
+		return dbObject;
+	}
 	
 	/*public DBObject getCity(final String name)
 	{
