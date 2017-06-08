@@ -22,4 +22,6 @@ public interface AppConstants
 	
 	String CRON_START_API="cronStartApi";
 	
+	String APPROX_DIST="approxDistance";
+	
 }

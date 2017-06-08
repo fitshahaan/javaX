@@ -11,6 +11,7 @@ import java.util.HashMap;
 
 import org.json.simple.JSONObject;
 
+import com.fitternity.constants.AppConstants;
 import com.fitternity.dao.collections.CityDao;
 import com.fitternity.dao.collections.LocationClusterDao;
 import com.fitternity.dao.collections.LocationDao;
@@ -21,6 +22,7 @@ import com.fitternity.manager.TransactionManager;
 import com.fitternity.services.GoogleApiServices;
 import com.fitternity.services.ReverseMigrateApiServices;
 import com.fitternity.util.Haversine;
+import com.fitternity.util.PropertiesUtil;
 import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
 import com.mongodb.BulkWriteOperation;
@@ -227,7 +229,7 @@ public class Start
 		{
 			File a=new File(System.getProperty("user.dir")+"/vendors.txt");
 			FileWriter fw=new FileWriter(a);
-			fw.write("ID-NAME-CITY,LOCATION"+System.lineSeparator());
+			fw.write("ID-NAME-CITY-LOCATION"+System.lineSeparator());
 			GoogleApiServices googleApiServices=new GoogleApiServices();
 			TransactionManager transactionManager = new TransactionManager();
 			transactionManager.startTransaction();
@@ -250,9 +252,7 @@ public class Start
 					lat=(Number)geometry.get("lat");
 					lng=(Number)geometry.get("lng");						
 				
-					double geo[]=new double[2];
-					geo[0]=lat.doubleValue();
-					geo[1]=lng.doubleValue();
+				double geo[]={lat.doubleValue(),lng.doubleValue()};
 				DBObject mainQuery=new BasicDBObject("$set",new BasicDBObject("geometry",new BasicDBObject("coordinates",geo)));
 //				System.out.println(" MAIN QUERY :: "+mainQuery);
 				bulkWriteOperation.find(new BasicDBObject("_id",Integer.parseInt(currentLocation.get("_id").toString()))).update(mainQuery);
@@ -324,7 +324,7 @@ public class Start
 						double endLong =vendorLng.doubleValue();
 						
 						
-						if(Haversine.distance(startLat, startLong, endLat, endLong)>=3)
+						if(Haversine.distance(startLat, startLong, endLat, endLong)>=Double.parseDouble(PropertiesUtil.getAppProperty(AppConstants.APPROX_DIST)))
 						{
 							fw.write(currentVendor.get("_id")+"-"+currentVendor.get("name")+"-"+cityDao.getCity((Number)currentVendor.get("city_id")).get("name")+"-"+idToName.get(numLoc.intValue())+System.lineSeparator());
 							System.out.println("IHAR AAYA");
