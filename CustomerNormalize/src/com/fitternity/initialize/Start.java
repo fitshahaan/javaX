@@ -18,6 +18,7 @@ import com.fitternity.dao.collections.LocationDao;
 import com.fitternity.dao.collections.VendorDao;
 import com.fitternity.enums.Collections;
 import com.fitternity.enums.Databases;
+import com.fitternity.manager.JobSchedulerManager;
 import com.fitternity.manager.TaskManager;
 import com.fitternity.manager.TransactionManager;
 import com.fitternity.services.GoogleApiServices;
@@ -38,10 +39,10 @@ public class Start
 {
 	public static void main(String[] args) 
 	{	
-//			System.out.println(JobSchedulerManager.processJobs()+" JOBS STARTED AND SCHEDULED.");
+			System.out.println(JobSchedulerManager.processJobs()+" JOBS STARTED AND SCHEDULED.");
 		
 //			System.out.println(Haversine.distance(19.1363246, 72.82765999999999, 19.1229326, 72.83013059999999));
-			fetchIncorrectLocations();
+//			fetchIncorrectLocations();
 //			System.out.println(PropertiesUtil.getCronProperty("normalizeCustomerIdPeriod"));
 			System.out.println(TaskManager.processTasks());
 //			System.out.println(new GoogleApiServices().googleGeoCodeOutput("jamia nagar")+" JOBS STARTED AND SCHEDULED.");
