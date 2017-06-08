@@ -23,5 +23,10 @@ public interface AppConstants
 	String CRON_START_API="cronStartApi";
 	
 	String APPROX_DIST="approxDistance";
+
+	String NEW_LOC_TASK="newLoctask";
+	
+	String NEARBY_DIST_ALGO_TASK="falseNearByDistAlgotask";
+	
 	
 }
