@@ -54,6 +54,13 @@ public class NormalizeCustomerId extends TimerTask {
 		// daoManager.getDB("fitadmin").getCollection(");
 		
 		DBCursor transCursor = transDao.getUncertainTransactions();
+		/*try {
+			Thread.sleep(100000000);
+			System.out.println("  SLEEPING!!!!");
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}*/
 		while (transCursor.hasNext()) 
 		{
 			DBObject currentTransObject = transCursor.next();
