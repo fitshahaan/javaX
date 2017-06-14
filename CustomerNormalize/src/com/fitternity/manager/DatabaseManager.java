@@ -6,6 +6,7 @@ import com.fitternity.dao.collections.CustomerDao;
 import com.fitternity.dao.collections.LocationClusterDao;
 import com.fitternity.dao.collections.LocationDao;
 import com.fitternity.dao.collections.OzoneTelDao;
+import com.fitternity.dao.collections.ReviewDao;
 import com.fitternity.dao.collections.TransactionDao;
 import com.fitternity.dao.collections.VendorDao;
 import com.fitternity.enums.Collections;
@@ -59,6 +60,7 @@ public class DatabaseManager
 		case LOCATIONS: 	return new LocationDao(db.getCollection(name.toString()));
 		case LOCATIONCLUSTERS: 	return new LocationClusterDao(db.getCollection(name.toString()));
 		case CITIES: 	return new CityDao(db.getCollection(name.toString()));
+		case REVIEWS: 	return new ReviewDao(db.getCollection(name.toString()));
 		default:return null;
 		}
 	}

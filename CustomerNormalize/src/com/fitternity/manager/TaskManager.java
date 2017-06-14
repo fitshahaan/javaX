@@ -31,11 +31,17 @@ public class TaskManager  implements CronConstants,AppConstants
 			tasksScheduled.put(Tasks.ADDNEWLOC, true);
 			
 		}
+		
 		if(Boolean.parseBoolean(PropertiesUtil.getAppProperty(NEARBY_DIST_ALGO_TASK)))
 		{
 			new NearbyDistAlgo().fetchIncorrectLocations();
 			tasksScheduled.put(Tasks.NEARBYDISTALGO, true);
 		}
+//		if(Boolean.parseBoolean(PropertiesUtil.getAppProperty(NEARBY_DIST_ALGO_TASK)))
+//		{
+//			new NearbyDistAlgo().fetchIncorrectLocations();
+//			tasksScheduled.put(Tasks.NEARBYDISTALGO, true);
+//		}
 		return tasksScheduled;
 	}
 	

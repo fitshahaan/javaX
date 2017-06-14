@@ -15,6 +15,7 @@ import com.fitternity.constants.AppConstants;
 import com.fitternity.dao.collections.CityDao;
 import com.fitternity.dao.collections.LocationClusterDao;
 import com.fitternity.dao.collections.LocationDao;
+import com.fitternity.dao.collections.ReviewDao;
 import com.fitternity.dao.collections.VendorDao;
 import com.fitternity.enums.Collections;
 import com.fitternity.enums.Databases;
@@ -27,6 +28,7 @@ import com.fitternity.util.CoreDistAlgo;
 import com.fitternity.util.PropertiesUtil;
 import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
+import com.mongodb.BasicDBObjectBuilder;
 import com.mongodb.BulkWriteOperation;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
@@ -39,12 +41,13 @@ public class Start
 {
 	public static void main(String[] args) 
 	{	
-			System.out.println(JobSchedulerManager.processJobs()+" JOBS STARTED AND SCHEDULED.");
+//			System.out.println(JobSchedulerManager.processJobs()+" JOBS STARTED AND SCHEDULED.");
 		
 //			System.out.println(Haversine.distance(19.1363246, 72.82765999999999, 19.1229326, 72.83013059999999));
 //			fetchIncorrectLocations();
 //			System.out.println(PropertiesUtil.getCronProperty("normalizeCustomerIdPeriod"));
-			System.out.println(TaskManager.processTasks());
+//			System.out.println(TaskManager.processTasks());
+			migrationTask();
 //			System.out.println(new GoogleApiServices().googleGeoCodeOutput("jamia nagar")+" JOBS STARTED AND SCHEDULED.");
 
 			
@@ -345,6 +348,38 @@ public class Start
 		
 	}	
 	
-	
+	public static void migrationTask()
+	{
+		TransactionManager transactionManager = new TransactionManager();
+		transactionManager.startTransaction();
+		ReviewDao reviewFitAdminDao = (ReviewDao) transactionManager.getDatabaseManager(Databases.FITADMIN).getCollection(Collections.REVIEWS);
+		ReviewDao reviewFitApiDao = (ReviewDao) transactionManager.getDatabaseManager(Databases.FITAPI).getCollection(Collections.REVIEWS);
+		
+			BulkWriteOperation bulkWriteOperation = reviewFitApiDao.getBulkWriteOp();
+		
+			DBCursor reviewFitadminCursor= reviewFitAdminDao.getAllData();
+			while(reviewFitadminCursor.hasNext())
+			{
+				DBObject dbObject = reviewFitadminCursor.next();
+				
+				BasicDBList customerReviews=new BasicDBList();
+				customerReviews.add(BasicDBObjectBuilder.start().add("description",(String)dbObject.get("description")).append("createdAt",dbObject.get("created_at")).append("rating",(dbObject.get("rating") instanceof String)? Double.parseDouble((String)dbObject.get("rating")):(Number)dbObject.get("rating")).append("detailRating",(BasicDBList)dbObject.get("detail_rating")).get());				
+				DBObject outputObject =BasicDBObjectBuilder.start().
+				add("_id",(Number)dbObject.get("_id")).
+				append("customerId", (Number)dbObject.get("customer_id")).
+				append("vendorId", (Number)dbObject.get("finder_id")).
+				append("status",Integer.parseInt((String) dbObject.get("status"))).
+				append("customerReviews", customerReviews).
+				append("vendorReviews", null).append("hull_id", (String)dbObject.get("hull_id")).get();
+				
+				System.out.println(dbObject);
+				System.out.println(outputObject);
+				
+				
+				bulkWriteOperation.insert(outputObject);		
+			}
+			System.out.println(bulkWriteOperation.execute());
+		
+	}
 	
 }
