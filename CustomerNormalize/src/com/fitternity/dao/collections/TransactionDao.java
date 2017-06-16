@@ -8,6 +8,7 @@ import com.fitternity.abstracthelpers.BaseCollection;
 import com.fitternity.dao.beans.Customer;
 import com.mongodb.BasicDBObject;
 import com.mongodb.BasicDBObjectBuilder;
+import com.mongodb.BulkWriteOperation;
 import com.mongodb.Bytes;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
@@ -58,6 +59,34 @@ public class TransactionDao extends BaseCollection
 		//}
 		return  cursor;
 
+}
+	
+	
+	public DBCursor getSchdeuledDateData() {
+		
+		BasicDBObject orConds[] = {new BasicDBObject("transaction_type", "Order"),new BasicDBObject("schedule_date", new BasicDBObject("$exists", true))};
+		DBObject query = BasicDBObjectBuilder.start().add("$and", orConds).get();
+		
+		System.out.println(" QUERY :: "+query);
+
+		DBCursor cursor = collection.find(query);
+		cursor.addOption(Bytes.QUERYOPTION_NOTIMEOUT);
+		
+		System.out.println(" MAIN UNCETAIN CURSOR SIZE" +cursor.count());
+		
+		return  cursor;
+
+}
+	
+	
+	
+	
+	
+	
+	public BulkWriteOperation getBulkWriteOp()
+{
+	BulkWriteOperation  bulkWriteOperation= collection.initializeUnorderedBulkOperation();
+	return bulkWriteOperation;
 }
 public void updateTransOnCustomerId(Number cid, DBObject currentTransObject) {
 		

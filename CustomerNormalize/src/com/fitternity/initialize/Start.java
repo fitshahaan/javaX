@@ -2,12 +2,22 @@ package com.fitternity.initialize;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
 import org.json.simple.JSONObject;
 
@@ -16,11 +26,10 @@ import com.fitternity.dao.collections.CityDao;
 import com.fitternity.dao.collections.LocationClusterDao;
 import com.fitternity.dao.collections.LocationDao;
 import com.fitternity.dao.collections.ReviewDao;
+import com.fitternity.dao.collections.TransactionDao;
 import com.fitternity.dao.collections.VendorDao;
 import com.fitternity.enums.Collections;
 import com.fitternity.enums.Databases;
-import com.fitternity.manager.JobSchedulerManager;
-import com.fitternity.manager.TaskManager;
 import com.fitternity.manager.TransactionManager;
 import com.fitternity.services.GoogleApiServices;
 import com.fitternity.services.ReverseMigrateApiServices;
@@ -39,7 +48,7 @@ import com.mongodb.DBObject;
  */
 public class Start
 {
-	public static void main(String[] args) 
+	public static void main(String[] args) throws IOException, ClassNotFoundException 
 	{	
 //			System.out.println(JobSchedulerManager.processJobs()+" JOBS STARTED AND SCHEDULED.");
 		
@@ -47,11 +56,31 @@ public class Start
 //			fetchIncorrectLocations();
 //			System.out.println(PropertiesUtil.getCronProperty("normalizeCustomerIdPeriod"));
 //			System.out.println(TaskManager.processTasks());
-			migrationTask();
+//			migrationTask();
+			try {
+				migrationTask1();
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 //			System.out.println(new GoogleApiServices().googleGeoCodeOutput("jamia nagar")+" JOBS STARTED AND SCHEDULED.");
 
-			
-			
+		  /*
+				A a =new A();
+			FileOutputStream fout=new FileOutputStream("f.txt");  
+			  ObjectOutputStream out=new ObjectOutputStream(fout);  
+			  
+			  out.writeObject(a);  
+			  out.flush();  
+			  
+			  
+			  ObjectInputStream in=new ObjectInputStream(new FileInputStream("f.txt"));  
+			  A s=(A)in.readObject();  
+			  System.out.println(s.a);  
+			  
+			  in.close();  
+			  
+			  System.out.println("success");  */
 			
 			//			ReverseMigrateApiServices reverseMigrateApiServices=new ReverseMigrateApiServices();
 //			reverseMigrateApiServices.startCustomerCron();
@@ -370,7 +399,7 @@ public class Start
 				append("vendorId", (Number)dbObject.get("finder_id")).
 				append("status",Integer.parseInt((String) dbObject.get("status"))).
 				append("customerReviews", customerReviews).
-				append("vendorReviews", null).append("hull_id", (String)dbObject.get("hull_id")).get();
+				append("vendorReviews", new BasicDBList()).append("hull_id", (String)dbObject.get("hull_id")).get();
 				
 				System.out.println(dbObject);
 				System.out.println(outputObject);
@@ -381,5 +410,65 @@ public class Start
 			System.out.println(bulkWriteOperation.execute());
 		
 	}
+	public static void migrationTask1() throws ParseException
+	{
+		TransactionManager transactionManager = new TransactionManager();
+		transactionManager.startTransaction();
+		TransactionDao transactionDao = (TransactionDao) transactionManager.getDatabaseManager(Databases.FITAPI).getCollection(Collections.TRANSACTIONS);
+		
+			BulkWriteOperation bulkWriteOperation = transactionDao.getBulkWriteOp();
+		
+			DBCursor transactionDaoCursor= transactionDao.getSchdeuledDateData();
+			int c=0;
+			SimpleDateFormat sdfmt1 = new SimpleDateFormat("dd-MM-yyyy");
+			SimpleDateFormat sdfmt2 = new SimpleDateFormat("dd-MMM-yyyy");
+			while(transactionDaoCursor.hasNext())
+			{
+				DBObject dbObject = transactionDaoCursor.next();
+				
+				BasicDBObject insert=new BasicDBObject();
+				Set<String> keys=dbObject.keySet();
+				
+				for (Iterator iterator = keys.iterator(); iterator.hasNext();) {
+					String key= (String) iterator.next();
+					if(!"_id".equals(key))
+					{
+						if("schedule_date".equals(key)&&dbObject.get(key) instanceof String)
+						{
+							System.out.println(key);
+							System.out.println(dbObject.get(key) instanceof String);
+							try
+							{
+								insert.put(key, sdfmt1.parse((String) dbObject.get(key)));	
+							}
+							catch (java.text.ParseException e) 
+							{
+								insert.put(key, sdfmt2.parse((String) dbObject.get(key)));
+							}
+						}		
+						else
+							insert.put(key,dbObject.get(key));
+					}
+				}
+				System.out.println(" ID :: "+dbObject.get("_id"));
+				bulkWriteOperation.find(new BasicDBObject("_id",dbObject.get("_id"))).update(new BasicDBObject("$set",insert));
+				c++;
+				System.out.println(c);
+				System.out.println(insert);
+				if(c==5000)
+				{
+					System.out.println(bulkWriteOperation.execute());	
+					bulkWriteOperation=transactionDao.getBulkWriteOp();
+					
+				}
+			}
+			System.out.println(bulkWriteOperation.execute());
+		
+	}
 	
 }
+/*class A implements Serializable
+{
+		String a;
+
+}*/
