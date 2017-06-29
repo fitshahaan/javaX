@@ -2,14 +2,9 @@ package com.fitternity.initialize;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -18,23 +13,32 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
+import java.util.concurrent.ThreadPoolExecutor;
 
 import org.json.simple.JSONObject;
 
 import com.fitternity.constants.AppConstants;
 import com.fitternity.dao.collections.CityDao;
+import com.fitternity.dao.collections.CustomerDao;
+import com.fitternity.dao.collections.DeviceDao;
 import com.fitternity.dao.collections.LocationClusterDao;
 import com.fitternity.dao.collections.LocationDao;
 import com.fitternity.dao.collections.ReviewDao;
 import com.fitternity.dao.collections.TransactionDao;
+import com.fitternity.dao.collections.VendorCategoryDao;
 import com.fitternity.dao.collections.VendorDao;
+import com.fitternity.dao.collections.VendorServiceCategoryDao;
+import com.fitternity.dao.collections.VendorServiceDao;
 import com.fitternity.enums.Collections;
 import com.fitternity.enums.Databases;
+import com.fitternity.manager.JobSchedulerManager;
 import com.fitternity.manager.TransactionManager;
 import com.fitternity.services.GoogleApiServices;
 import com.fitternity.services.ReverseMigrateApiServices;
+import com.fitternity.services.SmsService;
 import com.fitternity.util.CoreDistAlgo;
 import com.fitternity.util.PropertiesUtil;
+import com.google.gson.JsonObject;
 import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
 import com.mongodb.BasicDBObjectBuilder;
@@ -51,18 +55,26 @@ public class Start
 	public static void main(String[] args) throws IOException, ClassNotFoundException 
 	{	
 //			System.out.println(JobSchedulerManager.processJobs()+" JOBS STARTED AND SCHEDULED.");
-		
+		Date d1=new Date("23/06/2017");
+		Date d2=new Date("23/06/2017");
+				
 //			System.out.println(Haversine.distance(19.1363246, 72.82765999999999, 19.1229326, 72.83013059999999));
 //			fetchIncorrectLocations();
 //			System.out.println(PropertiesUtil.getCronProperty("normalizeCustomerIdPeriod"));
 //			System.out.println(TaskManager.processTasks());
 //			migrationTask();
-			try {
+//		migrationTask2();
+//		serviceTaggedApi("Fitness Studios");
+//		getFalseVendors();
+		sendPriorGATMessages();
+//		System.out.println(JobSchedulerManager.processJobs()+" JOBS STARTED AND SCHEDULED.");
+//		fetchLatLong();
+		/*	try {
 				migrationTask1();
 			} catch (ParseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
+			}*/
 //			System.out.println(new GoogleApiServices().googleGeoCodeOutput("jamia nagar")+" JOBS STARTED AND SCHEDULED.");
 
 		  /*
@@ -88,7 +100,241 @@ public class Start
 //		System.out.println(Boolean.parseBoolean(PropertiesUtil.getAppProperty(NORM_CUST_JOB)));
 	}
 	
+	private static void getFalseVendors() 
+	{
+		try {
+			FileWriter fw=new FileWriter(new File(System.getProperty("user.dir")+"/vendorServiceFal.txt"));
+			TransactionManager transactionManager = new TransactionManager();
+			transactionManager.startTransaction();
+			
+			VendorDao vendorDao = (VendorDao) transactionManager.getDatabaseManager(Databases.FITAPI).getCollection(Collections.VENDORS);
+			VendorServiceCategoryDao  vendorServiceCategoryDao= (VendorServiceCategoryDao) transactionManager.getDatabaseManager(Databases.FITAPI).getCollection(Collections.VENDORSERVICECATEGORIES);
+			VendorServiceDao  vendorServicesDao= (VendorServiceDao) transactionManager.getDatabaseManager(Databases.FITAPI).getCollection(Collections.VENDORSERVICES);
+			CityDao  cityDao= (CityDao) transactionManager.getDatabaseManager(Databases.FITAPI).getCollection(Collections.CITIES);
+			LocationDao locationDao= (LocationDao) transactionManager.getDatabaseManager(Databases.FITAPI).getCollection(Collections.LOCATIONS);
+			VendorCategoryDao vendorCategoryDao= (VendorCategoryDao) transactionManager.getDatabaseManager(Databases.FITAPI).getCollection(Collections.VENDORCATEGORIES);
+			
+			DBCursor vendorCursor=vendorDao.getVendors();
+			
+			fw.write("Vendor ID,Vendor name,Service Id,Service Name"+System.lineSeparator());
+			int counter=0;
+			while(vendorCursor.hasNext())
+			{
+				DBObject vendor=vendorCursor.next();
+				boolean vendorFalse=false;
+				DBObject vendorcat=(DBObject)vendor.get("vendorcategory");
+				BasicDBList vendorSecCatList=(BasicDBList)vendorcat.get("secondary");
+				
+				/*for (Iterator iterator = vendorSecCatList.iterator(); iterator.hasNext();) {
+					String vendorCat = (String) iterator.next();
+					*/
+					DBCursor vendorServicesCursor=vendorServicesDao.getVendorServices((Number)vendor.get("_id"));
+					while(vendorServicesCursor.hasNext())
+					{
+						DBObject vendorService=vendorServicesCursor.next();
+						if(!vendorSecCatList.contains(vendorService.get("primary")))
+							{	
+								System.out.println(vendor.get("_id")+","+vendor.get("name")+","+vendorService.get("_id")+","+vendorService.get("name")+System.lineSeparator());
+								vendorFalse=true;
+								break;
+							}
+						else
+							System.out.println(" PRESENT HAI");
+					}
+//				}
+					if(vendorFalse)
+						fw.write(vendor.get("_id")+","+vendor.get("name")+System.lineSeparator());
+				/*DBObject vendor=vendorDao.getVendor((Number)vendorCategory.get("vendor_id"));
+				String vendorName=(String)vendor.get("name");
+				Number vendorID=(Number)vendor.get("_id");
+				DBObject commercial=(DBObject)vendor.get("commercial");
+				String commercialType=(String)commercial.get("type");
+				System.out.println("vendorName ::" +vendorName+" , vendorID :: "+vendorID+" , commercialType :: "+commercialType);
+				System.out.println("vendor.get(vendorcategory.primary)" +vendor.get("vendorcategory.primary"));
+				
+				String vendorCategoryName=(String)vendorCategory.get("name");
+				
+				DBObject vendorLoc=(DBObject)vendor.get("location");
+				DBObject location=locationDao.getLocation((Number)vendorLoc.get("primary"));
+				String locationName=(String)location.get("name");
+				
+				DBObject city=cityDao.getCity((Number)vendor.get("city_id"));
+				String cityName=(String)city.get("name");
+				
+				String serviceName=(String)vendorService.get("name");
+				
+				DBObject vendServ=(DBObject)vendorService.get("category");
+				String vendorServiceCategory=(String)vendorServiceCategoryDao.getCategory((Number)vendServ.get("primary")).get("name");
+				
+				String vendorServiceSecondaryCategory=(String)vendorServiceCategoryDao.getCategory((Number)vendServ.get("secondary")).get("name");*/
+				
+				
+			
+			}
+			fw.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
 	
+	/*private static void serviceTaggedApi(String serCatName) 
+	{
+		try {
+			FileWriter fw=new FileWriter(new File(System.getProperty("user.dir")+"/vendorServiceTagged.txt"));
+			TransactionManager transactionManager = new TransactionManager();
+			transactionManager.startTransaction();
+			
+			VendorDao vendorDao = (VendorDao) transactionManager.getDatabaseManager(Databases.FITAPI).getCollection(Collections.VENDORS);
+			VendorServiceCategoryDao  vendorServiceCategoryDao= (VendorServiceCategoryDao) transactionManager.getDatabaseManager(Databases.FITAPI).getCollection(Collections.VENDORSERVICECATEGORIES);
+			VendorServiceDao  vendorServicesDao= (VendorServiceDao) transactionManager.getDatabaseManager(Databases.FITAPI).getCollection(Collections.VENDORSERVICES);
+			CityDao  cityDao= (CityDao) transactionManager.getDatabaseManager(Databases.FITAPI).getCollection(Collections.CITIES);
+			LocationDao locationDao= (LocationDao) transactionManager.getDatabaseManager(Databases.FITAPI).getCollection(Collections.LOCATIONS);
+			VendorCategoryDao vendorCategoryDao= (VendorCategoryDao) transactionManager.getDatabaseManager(Databases.FITAPI).getCollection(Collections.VENDORCATEGORIES);
+			
+			
+			Number categoryId=vendorServiceCategoryDao.getCategoryId(serCatName);
+	
+			DBCursor vendorServicesCursor= vendorServicesDao.getVendorServices(categoryId);
+			fw.write("Vendor ID,Vendor name,Commercial Type,Category,Location,City,Service Name,Service Category,Service Subcategory"+System.lineSeparator());
+			while(vendorServicesCursor.hasNext())
+			{
+				DBObject vendorService=vendorServicesCursor.next();
+				System.out.println("vendorService :: "+vendorService);
+				DBObject vendor=vendorDao.getVendor((Number)vendorService.get("vendor_id"));
+				String vendorName=(String)vendor.get("name");
+				Number vendorID=(Number)vendor.get("_id");
+				DBObject commercial=(DBObject)vendor.get("commercial");
+				String commercialType=(String)commercial.get("type");
+				System.out.println("vendorName ::" +vendorName+" , vendorID :: "+vendorID+" , commercialType :: "+commercialType);
+				System.out.println("vendor.get(vendorcategory.primary)" +vendor.get("vendorcategory.primary"));
+				DBObject vendorcat=(DBObject)vendor.get("vendorcategory");
+				DBObject vendorCategory=vendorCategoryDao.getCategory((Number)vendorcat.get("primary"));
+				String vendorCategoryName=(String)vendorCategory.get("name");
+				
+				DBObject vendorLoc=(DBObject)vendor.get("location");
+				DBObject location=locationDao.getLocation((Number)vendorLoc.get("primary"));
+				String locationName=(String)location.get("name");
+				
+				DBObject city=cityDao.getCity((Number)vendor.get("city_id"));
+				String cityName=(String)city.get("name");
+				
+				String serviceName=(String)vendorService.get("name");
+				
+				DBObject vendServ=(DBObject)vendorService.get("category");
+				String vendorServiceCategory=(String)vendorServiceCategoryDao.getCategory((Number)vendServ.get("primary")).get("name");
+				
+				String vendorServiceSecondaryCategory=(String)vendorServiceCategoryDao.getCategory((Number)vendServ.get("secondary")).get("name");
+				
+				System.out.println(vendorID+","+vendorName+","+commercialType+","+vendorCategoryName+","+locationName+","+cityName+","+serviceName+","+vendorServiceCategory+","+vendorServiceSecondaryCategory+System.lineSeparator());
+				fw.write(vendorID+","+vendorName+","+commercialType+","+vendorCategoryName+","+locationName+","+cityName+","+serviceName+","+vendorServiceCategory+","+vendorServiceSecondaryCategory+System.lineSeparator());
+			
+			}
+			fw.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}*/
+	
+	
+	private static void sendPriorGATMessages() 
+	{
+		SmsService smsService =new SmsService();
+		TransactionManager transactionManager = new TransactionManager();
+		transactionManager.startTransaction();
+		
+		TransactionDao transactionsDao= (TransactionDao) transactionManager.getDatabaseManager(Databases.FITAPI).getCollection(Collections.TRANSACTIONS);
+		HashMap[] condsBased=transactionsDao.getAggregatedCustomersGAT();
+		HashMap<Number, Object[]> sMap=condsBased[0];
+		HashMap<Number, Object[]> fMap=condsBased[1];
+		CustomerDao customerDao= (CustomerDao) transactionManager.getDatabaseManager(Databases.FITADMIN).getCollection(Collections.CUSTOMERS);
+		VendorDao vendorDao= (VendorDao) transactionManager.getDatabaseManager(Databases.FITAPI).getCollection(Collections.VENDORS);
+		
+		DBCursor customers=customerDao.getCustomersWithPhone();
+		HashSet<Number[]> finalCustomers=new HashSet<>();
+		for (DBObject customer : customers) 
+		{
+			Number id=(Number)customer.get("_id");
+			
+			if(fMap.containsKey(id))
+			{
+				if(!sMap.containsKey(id))
+					finalCustomers.add(new Number[]{id,(Number)fMap.get(id)[1]});
+				else
+				{
+						Date fDate=(Date) fMap.get(id)[0];
+						Date sDate=(Date) sMap.get(id)[0];
+						System.out.println(" fMap.get(id)[1] "+fMap.get(id)[1]);
+						if(fDate.after(sDate))
+						{
+							finalCustomers.add(new Number[]{id,(Number)fMap.get(id)[1]});
+						}
+									
+				}
+			}
+		}
+		/*for (Number[] numbers : finalCustomers) 
+		{
+			DBObject customer=customerDao.getCustomer(numbers[0]);
+			DBObject vendor=vendorDao.getVendor(numbers[1]);
+			
+//			System.out.println("Customer Id ::"+numbers[0]+"Vendor Id ::"+numbers[1]);
+//			JsonObject body=new JsonObject();
+//			body.addProperty("to", ((customer.get("contact_no") instanceof String)?(String)customer.get("contact_no"):customer.get("contact_no")+""));
+//			body.addProperty("message", " CHILL BRO");
+//			body.addProperty("delay", 0);
+//			body.addProperty("label", " TEST SHAHAAN");
+//			body.addProperty("city_id", -1);
+//			smsService.sendSingleSms(body);
+		}*/
+		JsonObject body=new JsonObject();
+		body.addProperty("to","9920381327");
+		body.addProperty("message", " BRO");
+		body.addProperty("delay", 0);
+		body.addProperty("label", " TEST SHAHAAN");
+		body.addProperty("city_id", -1);
+		smsService.sendSingleSms(body);
+//		System.out.println(finalCustomers);
+		System.out.println(" finalCustomers :: "+finalCustomers.size());
+//		ThreadPoolExecutor th=new ThreadPoolExecutor(5, 30, , unit, workQueue)
+		
+
+	}
+	
+	
+	
+	
+	private static void fetchLatLong() 
+	{
+		try {
+			BufferedReader br=new BufferedReader(new FileReader(new File(System.getProperty("user.dir")+"/input/LocationsPopulate/hyderabad.txt")));
+			String line="";
+			FileWriter fw=new FileWriter(new File(System.getProperty("user.dir")+"/HyderabadLocations.txt"));
+			fw.write("Name,Latitude,Longitude"+System.lineSeparator());
+			int counter=0;
+			while((line=br.readLine())!=null)
+			{
+				GoogleApiServices googleApiServices=new GoogleApiServices();
+				JSONObject output=googleApiServices.googleGeoCodeOutput(line);
+				System.out.println(output);
+				System.out.println(output.get("lat"));
+				fw.write(line+","+output.get("lat")+","+output.get("lng")+System.lineSeparator());
+				System.out.println(line+","+output.get("lat")+","+output.get("lng")+System.lineSeparator());
+				System.out.println(counter++);
+			}
+			fw.close();
+			br.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+
 	public static void addNewLocations()
 	{	
 		try {
@@ -406,6 +652,64 @@ public class Start
 				
 				
 				bulkWriteOperation.insert(outputObject);		
+			}
+			System.out.println(bulkWriteOperation.execute());
+		
+	}
+	
+	public static void migrationTask2()
+	{
+		TransactionManager transactionManager = new TransactionManager();
+		transactionManager.startTransaction();
+		DeviceDao deviceFitAdminDao = (DeviceDao) transactionManager.getDatabaseManager(Databases.FITADMIN).getCollection(Collections.DEVICES);
+		DeviceDao deviceFitApiDao = (DeviceDao) transactionManager.getDatabaseManager(Databases.FITAPI).getCollection(Collections.DEVICES);
+		
+			BulkWriteOperation bulkWriteOperation = deviceFitApiDao.getBulkWriteOp();
+		
+			DBCursor deviceFitadminCursor= deviceFitAdminDao.getAllData();
+			int c=0;
+
+			while(deviceFitadminCursor.hasNext())
+			{
+				DBObject dbObject = deviceFitadminCursor.next();
+				
+				BasicDBObject insert=new BasicDBObject();
+				Set<String> keys=dbObject.keySet();
+				
+				for (Iterator iterator = keys.iterator(); iterator.hasNext();) {
+					String key= (String) iterator.next();
+					insert.put(key,dbObject.get(key));
+					/*if(!"_id".equals(key))
+					{
+						if("schedule_date".equals(key)&&dbObject.get(key) instanceof String)
+						{
+							System.out.println(key);
+							System.out.println(dbObject.get(key) instanceof String);
+							try
+							{
+								insert.put(key, sdfmt1.parse((String) dbObject.get(key)));	
+							}
+							catch (java.text.ParseException e) 
+							{
+								insert.put(key, sdfmt2.parse((String) dbObject.get(key)));
+							}
+						}		
+						else
+							insert.put(key,dbObject.get(key));
+					}*/
+				}
+				System.out.println(" ID :: "+dbObject.get("_id"));
+//				bulkWriteOperation.find(new BasicDBObject("_id",dbObject.get("_id"))).update(new BasicDBObject("$set",insert));
+				bulkWriteOperation.insert(insert);;
+				c++;
+				System.out.println(c);
+				System.out.println(insert);
+				if(c==2500)
+				{
+					System.out.println(bulkWriteOperation.execute());	
+					bulkWriteOperation=deviceFitApiDao.getBulkWriteOp();
+					
+				}
 			}
 			System.out.println(bulkWriteOperation.execute());
 		

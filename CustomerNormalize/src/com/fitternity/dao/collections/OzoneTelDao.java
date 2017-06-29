@@ -59,7 +59,7 @@ public class OzoneTelDao extends BaseCollection
 		System.out.println(cursor.getUpsertedId());
 		System.out.println(cursor.getN());
 		System.out.println(cursor.isUpdateOfExisting());
-		System.out.println(cursor.getLastConcern());
+//		System.out.println(cursor.getLastConcern());
 	}
 	
 

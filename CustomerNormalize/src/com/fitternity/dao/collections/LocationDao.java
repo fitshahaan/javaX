@@ -29,23 +29,14 @@ public class LocationDao extends BaseCollection
 	public LocationDao() {
 		// TODO Auto-generated constructor stub
 	}
-	public DBObject getCustomer(int id) {
-		DBObject query = BasicDBObjectBuilder.start().add("_id", id).get();
-		DBCursor cursor = collection.find(query);
-		while(cursor.hasNext()){
-		
-		return cursor.next();
-		}
-		/*try {
-			formatToFields(cursor);
-		} catch (IllegalArgumentException | IllegalAccessException | NoSuchFieldException | SecurityException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null;*/
-		return query;
-	}
+
 	
+	public DBObject getLocation(Number id) {
+		DBObject query = BasicDBObjectBuilder.start().add("_id", id).get();
+		DBObject cursor = collection.findOne(query);
+		System.out.println("getLocation "+query);
+		return cursor;	
+	}
 	
 	
 	public Number getTopLocationID(int topElement) {
@@ -176,7 +167,6 @@ public class LocationDao extends BaseCollection
 		System.out.println(cursor.getUpsertedId());
 		System.out.println(cursor.getN());
 		System.out.println(cursor.isUpdateOfExisting());
-		System.out.println(cursor.getLastConcern());
 	}
 	public DBCursor getAllIncorrectLocations() {
 		// TODO Auto-generated method stub

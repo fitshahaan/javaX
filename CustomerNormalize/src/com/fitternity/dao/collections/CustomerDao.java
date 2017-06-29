@@ -9,6 +9,7 @@ import com.fitternity.dao.beans.Customer;
 import com.mongodb.BasicDBObject;
 import com.mongodb.BasicDBObjectBuilder;
 import com.mongodb.BulkWriteOperation;
+import com.mongodb.Bytes;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
@@ -29,7 +30,7 @@ public class CustomerDao extends BaseCollection
 	public CustomerDao() {
 		// TODO Auto-generated constructor stub
 	}
-	public DBObject getCustomer(int id) {
+	public DBObject getCustomer(Number id) {
 		DBObject query = BasicDBObjectBuilder.start().add("_id", id).get();
 		DBCursor cursor = collection.find(query);
 		while(cursor.hasNext()){
@@ -74,6 +75,24 @@ public class CustomerDao extends BaseCollection
 		DBObject query = BasicDBObjectBuilder.start().add("contact_no", contactNo).get();
 		System.out.println("query "+query);
 		DBObject cursor = collection.findOne(query);
+//		System.out.println("getCustomerBasedOnPhone size  "+cursor.keySet().size());
+//		System.out.println("getCustomerBasedOnPhone id  "+cursor.get("_id"));
+		return cursor;
+	}
+	public DBCursor getCustomersWithPhone() {
+		DBObject query = BasicDBObjectBuilder.start().add("contact_no", new BasicDBObject("$exists",true)).get();
+		System.out.println("query "+query);
+		DBCursor cursor = collection.find(query);
+		cursor.addOption(Bytes.QUERYOPTION_NOTIMEOUT);
+		System.out.println(" TOTAL CUSTOMERS WITH PHONE  :: "+cursor.count());
+//		System.out.println("getCustomerBasedOnPhone size   "+cursor.keySet().size());
+//		System.out.println("getCustomerBasedOnPhone id  "+cursor.get("_id"));
+		return cursor;
+	}
+	public DBCursor getCustomersWithEmail() {
+		DBObject query = BasicDBObjectBuilder.start().add("email", new BasicDBObject("$exists",true)).get();
+		System.out.println("query "+query);
+		DBCursor cursor = collection.find(query);
 //		System.out.println("getCustomerBasedOnPhone size  "+cursor.keySet().size());
 //		System.out.println("getCustomerBasedOnPhone id  "+cursor.get("_id"));
 		return cursor;
@@ -145,7 +164,6 @@ public class CustomerDao extends BaseCollection
 		System.out.println(cursor.getUpsertedId());
 		System.out.println(cursor.getN());
 		System.out.println(cursor.isUpdateOfExisting());
-		System.out.println(cursor.getLastConcern());
 	}	
 	
 }

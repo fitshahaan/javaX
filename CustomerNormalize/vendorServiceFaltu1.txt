@@ -1,0 +1,1844 @@
+Vendor ID,Vendor name,Service Id,Service Name
+2,Essar Fitness
+1,20-15 Fitness
+3,Workouts Gym
+4,Fitness Point
+9,Xtreme Fitness
+11,Neha Chandna
+12,Max Power House
+13,Big Boss The Gym
+14,The Ultimate 6 Pack Fitness Hub
+15,Giri Gym and Fitness Center(Only Gents )
+16,Sangeet Abhinay Academy
+17,K Fitness
+18,Sheela Tanna
+19,Shiv sai ganesh gym
+20,Matoshri Gym
+22,Mhatre's Fitness Mantra
+25,Body Art
+26,Body Art
+31,Image Modern Health Planet
+32,Fitness Planet
+34,Perfect Fitness Gym
+35,Bowlekar's health fitness
+36,Sachin Fitness
+37,The Arena
+38,Sadhana Dance Academy
+40,Eco Fitness
+41,Havovi M Sukhadwala
+44,Karishma Chawla
+45,Gym & Tonic
+46,Appropriate Diet
+47,Prayas The Gym
+50,Aryan Fitness and Gym
+57,The Body Zone Gym
+60,Make me fit
+61,Kinetic Living
+62,Ren Kick Boxing And Self Defence Academy
+66,Nikhil Dilip Kumbhar
+70,Fitt n Trim
+71,Matruchhaya Gymnasium
+73,King's Gym
+74,Dynamic Gym
+75,First In Fitness (Ladies Only)
+78,Ideal Gym
+83,Shree Vithal Vyam Mandir Trust
+89,Smita Shah
+92,Ayurmantra Yoga Power Yoga Meditation Pranic Healing Clinic
+97,Edge Fitness
+98,Yoga Tantra
+99,Flowing Wheel
+111,Gurukrupa Yoga Classes
+113,Serenity Yog Meditation
+117,Shri Ambika Yog Kutir
+118,Positive Health Option
+119,Body Attitude Fitness Studio
+120,Yog Jeevan
+121,Traditional Yoga Centre
+122,Sumit Yoga Trainer
+126,Gold Gymnasium
+127,Alka Mohan Salve Yoga
+129,Benefit Fitness Management
+130,Yoga Academy
+131,Planet Health
+136,Kalidas Gym
+138,Frequencee
+139,New York Gym
+142,Mesomorph The Gym
+143,Mantra Gym
+147,Fighting Fit
+149,Yogoda Satsanga Dhyana Kendra
+151,Yuj
+152,Dr Kunals Yoga And Fitness Exercise
+153,Aim Yoga
+154,Bay View Yoga Classes
+161,Iyengar Yogashraya
+165,Onyx gymnasium
+166,Yog Power Studio Pvt Ltd.
+170,Quest Fitness
+171,Beyond Fitness
+172,Swabhimani Gym
+174,Workout Gym
+176,Sp Fitness Centre
+178,X-Trim Fitness
+179,Reetas Revive Gym and Fitness Studio
+180,Carewell Fitness The Gym
+181,Get Fit Health Zone
+183,Shree Fitness
+187,Sanskar Yoga Health & Excellence Institute
+188,Yoga With Kush
+190,Shwet Yoga
+191,Arogyam Yoga - Personal Trainers
+192,Kamal Yoga Tutor
+193,Shiv Ganesh Yoga
+196,Raj Shree Yoga
+197,Power Pack Fitness Center
+199,Anandi Yogakutir
+201,Nitin Yoga & Meditation
+202,Abbas Gym
+210,Sai Ganesh Yoga Center
+214,Devendra Yog Prashikshan Kendra
+215,Bubbles Yoga Class
+217,Anjali Sahu
+219,Roxy Gym
+220,Abhishek Yoga Instructor
+223,Terence Lewis Professional Training Institute
+224,Kohl Movement - A Belly dance Company
+226,Parulekars Gym & Fitness Centre
+227,Health of Green
+228,Ares N Vikings - The Fitness Club
+230,Fitness Step
+232,Organised Chaos Studio
+233,RT Dance Academy
+237,Rukhsana Khan's Yoga Classes
+239,Midas Touch Dance Studio
+244,Classic Fitness
+245,Orbit Gym
+246,Nrityasanskar
+247,Sandesh Ambekar
+249,Rhythm
+250,Asthang Yoga Classes
+252,Puja's Yoga Classes
+253,Samarth Shree Gym
+254,Yoga Living
+255,M V Joglekar
+256,New York Gym
+257,Yoga Nugget
+258,Naach Dance Academy
+260,Naach Dance Academy
+261,Darekars Fitness Club
+263,Figure In Health Care
+265,Bodysmith Fitness N Wellness
+266,16Hour Fitness Center
+270,Sarvoday Vyayam Shalla
+271,H M Fitness Centre
+272,Ankur Gym
+274,Health and Fitness Centre
+275,Sekai Goju Ryu Ryusyokai India
+276,Spartans Gym
+279,Santosh Vyayam Mandir
+281,Anitas Yoga Classes
+282,Fitness Warrior
+284,Rollys Yoga Classes
+285,Pranav Yoga Classes
+288,Fun and Fit Pvt Ltd
+290,Freak N Stylz
+292,Fun and Fit Pvt Ltd
+293,Matoshri Prime Physique
+296,Empire Gym And Fitness Center
+298,Panchamukhi hanuman mandir vyam shalla
+302,Chaitanya Health Care Center
+303,Pride Power Yoga And Aerobics Prem Nagar
+305,Yoga At Your Home
+306,Hardcore image gym
+307,Grace Fitness Center
+309,Gurukul Yoga Kendra
+311,Yog Siddhi
+316,Yogi Yogini
+317,Kalpana Yoga Classes
+320,M B S Yoga Classes
+321,Shivas Gymnasium
+322,Bhavesh Patil
+326,Koryu Budo Art Academy (Sword Fighting)
+327,Yog with Anita
+328,Melt
+329,Integym
+336,Freak N Stylz
+341,Tai Chi International Academy
+344,Nritya Kala Academy
+345,Sumeet Nagdev Dance Arts
+347,Shivgarjana gym
+350,Don Bosco Fitness Center
+351,Split Sole Dance Academy
+352,Matunga Gujrati Club Ltd.
+357,YMCA Navi mumbai
+367,Soul Feet
+368,Rao Yoga
+369,Sway Fitness
+371,Dance Planet
+372,Konbatto Martial Arts Academy
+375,Ninad Center for Performing Arts
+376,Ninad Center for Performing Arts
+377,Parleshwar Gym
+380,New Age Yoga Studios
+382,Inch Pinch Fitness Hub
+387,Bina Yoga Classes
+388,Nityam Yoga Center
+390,Radhe Krishna Holistic Yoga
+396,Sudhachandran Natya Mayuri Dance Academy
+398,Swagat Dance Academy
+400,Talwalkars
+401,Talwalkars Goregaon West
+402,Talwalkars Vasai
+403,F.U.N- Fitness U and Nutrition
+408,Shorinjiryu Karate Do Renshinkan
+410,Chinmay's Fitness Academy
+412,Xtreme Fight Federation
+414,Rajesh Thakkars Karate Academy
+416,M J Academy Of Martial Arts
+417,Amit Lalwanis Kick Boxing
+420,Yudanshu Kobujitsu Karate Doh Federation
+421,Podar Judo Club
+424,JG's Fitness Centre
+425,Ashish Rawani Home Yoga
+426,Om Yog Sadna
+427,Street Self Defense
+428,Core Combat Martial Arts Institute
+430,Nrityalika Academy
+434,Shotokan Karate International Federation
+439,Shaolin Martial Arts Association Of India
+442,Baqar Nasser's Topspin
+448,Tanjai Kala Mandir
+449,Nuage Hot Yoga
+450,Abstract Dance Academy
+451,Danzrzs Dance Academy
+452,Creative Roller Skating Club
+453,JBS Roller Skating Club
+459,Palms Water Club Swimming Pool
+463,Dolphin Swimming Academy
+471,Radheshyam Upadhyay
+480,Bal Mitra Gym
+484,J J Skaters
+488,Navroop Yoga
+490,Shree Hariom Yoga
+493,Daminis Yoga Classes
+495,Jivan Deep Yoga Centre
+497,Atha Yoga Classes
+498,Karnala Sports Academy and Swimming Pool
+503,Alok Yoga Classes
+504,Shilpas wellness
+515,Max Gymnasium
+520,Penkar's Health Club
+521,Body Basics
+523,Active Gym
+530,Chakra Project
+535,Richa Yoga Classes
+536,Shivam Yoga
+537,Deepak Chabria Yoga Classes
+541,Chandrahas Suresh Narvekar
+542,Prachin Yoga
+544,In Shape Gym
+547,Elite Fitness
+549,Body Point Fitness Centre
+550,Focus The fitness
+551,Fitness Gym
+552,Iron Fitness
+554,Ikon Wellness Pvt. Ltd.
+555,Jennifer Dhuri
+559,Anjum Shaikh
+561,Rubiinus Fitness and Spa
+563,Physique Complete Fitness Studio
+566,Red Gym
+569,The Pilates and Altitude Training Studio
+570,Beyond Fitness
+573,Yogita Goradia
+575,Capoeira India
+576,Talwalkars Andheri East
+579,Gold's Gym
+586,G.B.Basnet (Self Defence Trainer)
+590,My Fitness
+596,Endurance Fitness
+597,Sadgurus Mission Fitness
+598,Sadgurus Mission Fitness
+601,Star Dance And Fitness Academy
+602,Yoga Hut
+604,Rudra Shala
+605,Strong bodies, Stronger minds - Pooja Parekh
+607,The Gladiators
+608,Snap Fitness
+610,Mustafa Ahmed Fitness
+612,Edge Fitness
+613,CrossFit OM
+614,New Age Yoga
+616,SDWM Shirishs Dancing and Fitness Studio
+619,Kajal's Fitness
+621,Jehangir Shroff
+624,E-Gym
+625,Physioflex
+628,BPCA
+633,ZAF Club
+635,Superb Fitness Center
+638,The Fire Dance Academy
+639,Vidya's Yoga Classes
+641,Deepa Dance Classes
+642,Feline Adonis Fitness Club
+645,Yashraj Danz Tanz
+647,Fitness Warehouse
+648,The Iyengar Yoga
+649,Vijay Gym
+658,Arogya Dhansampada Foundation
+659,Viva Dance Class
+667,Body Garage
+668,Parulekars Gym
+671,Raheja Fitness Studio
+672,The Alchemist Academy of Art
+675,Sv Life Fitness Gym
+678,Atindriiya
+681,Dance With Sweety
+683,Anti Ageing Solutions
+689,Fitwell Fitness Centre
+691,Toes N Tunes
+692,Rajeev Dance Academy
+693,Muscle and Might
+694,Fitness Magic
+695,Fitness Fanatic
+696,BPES Gymnasium
+698,Natraj Dance Academy
+699,Muscle Maker
+702,Padwalkar Gymnasium
+704,Health Fitness Center
+713,Parulekars
+714,Fitness Fiesta
+715,Vijay Alva
+718,Muscle n Mind
+719,Famous Yoga Energy Centre
+721,Well n Trim
+722,Well n Trim
+725,Nilesh Parab's Fitness 1st
+727,Fit And Fine
+728,The Yoga Institute
+729,Bodyscape
+731,Studio Balance
+732,Fitness Step
+734,Shivsena Health Club
+735,Grace Fitness Centre
+736,Grace Fitness Centre
+737,Yoga Classes
+739,Pro + Fit
+741,Combative School Of Martial Arts
+742,Combative School Of Martial Arts
+747,Zumba
+749,Holistic Yoga
+752,Leena Mogre's Fitness
+753,Gravity Gymnasium
+756,Fitness Fever
+757,Nirmal Dance & Acting Class
+760,Global Music And Dance Academy
+762,Jagriti Yoga Institute
+768,Vaidehi Soman
+770,Noopur Nartan KalaKendra
+771,Soorabhi Dance Academy
+779,Shirkes Gymnasium & Spa Rules
+780,Sanctum Fitness
+781,Vigour Gym
+783,Hercules Health Center
+784,Palkar Gym
+785,Steps Dance Institute
+786,International Sendo-ryu karate-do Federation
+787,Kalyanji Dance Academy
+788,Gold Coin Gym Fitness Centre
+790,Anupam Academy Of Performing Arts
+791,Khushi Dance Classes
+794,Raymond Mirandas Academy of Dance
+801,Nrityalaya
+803,Dance Trax
+809,Iron Man Gym
+812,Fitness Addiction
+813,Cuts N Curves Gym
+816,Cosmic Fusion
+817,Pro+Fit
+818,Jacobs Gym
+822,Pawan Yoga Center
+823,Xersize (Ladies)
+824,People's Gym
+825,Yasmin Karachiwala's - Body Image
+827,XFF - Xtreme Fight Federation
+829,Swing 2 Salsa Raunaque's Dance and Fitness Education
+830,Abhay Chowdhary
+833,Ju Jitsu Federation Of India
+834,Mudra Dance Classes
+841,Oris Dance And Fitness
+847,Karatedoindia
+851,My Fitness Centre
+852,Yoga Vidya Niketan
+854,Slimwell
+855,Five Star Acting Dancing Classes
+860,Kalasadan
+861,VS Fitness And Body Building
+862,Cloud 9 Fitness Club
+866,Yadnesh Shotokan Karate
+869,Divine Yoga Classes
+875,Cheri Shah Doshi
+877,Synergym (ST Fitness)
+878,10 The Health Spa
+881,Mint V's Fitness
+883,Khushnoor Jijina
+889,Murugan Aerobics
+890,Cipsa
+891,Swim Skills Swimming Pool
+892,Ansar's Academy of Dance
+894,Neenu Khanna
+896,The Yoga
+899,Kosha
+900,The Body Craft House
+903,Shiv Holistic Yoga
+904,Yogasthana (Hath Yoga)
+905,Yogacara Healing Arts
+913,Sindhi Society Gymkhana Swimming Pool
+917,Kanaka Sabha Performing Arts Centre
+919,Heart Beat Dance Academy
+920,Studio Rhythm Dance Class
+924,Dnyana Sadhana Trust
+926,V's Fitness Studio and Gymnasium - Powai
+927,Rima Thakker
+928,Sky Meditation Center
+929,P S Geeta
+935,Planet 9 Fitness Studio
+941,5 Fitness Club
+944,Juhu Vileparle Gymkhana Club Swimming Pool
+945,Matoshri Arts Swimming Pool
+946,Celebration Club Swimming Pool
+949,Juhu Millenium Club and Swimming Pool
+951,Sher-e-Punjab Gymkhana Swimming Pool
+954,S C N Sports Club and Swimming Pool
+955,Khar Gymkhana Swimming Pool
+966,The Lalit
+969,The Orchid Hotel
+970,Vivanta by Taj - President
+971,Hyatt Regency - The Club Prana Spa and Fitness Centre
+972,The Retreat Hotel and Convention Centre Swimming Pool
+973,Courtyard by Marriott
+974,Vits Luxury Hotel Health Club and Swimming Pool
+989,Country Club Spring Swimming Pool
+975,Star Athletes United
+978,Hotel Sofitel
+979,Novotel Hotel
+980,The Resort Hotel
+981,Residence Hotel Swimming Pool
+982,The Park Swimming Pool
+983,Yoga With Shirley Batiwala
+984,Baile - De - Salon
+987,Activ8 Studio
+988,Miles With Giles
+990,Moss The Resort - Swimming Pool
+991,Ramee Guestline Hotel Juhu Swimming Pool
+992,Fariyas Hotel Swimming Pool
+993,Chatrapati Shivaji Maharaj Club Swimming Pool
+995,D'Monte Park Recreation Club Swimming Pool
+996,YMCA International House Swimming Pool
+997,Bodyrhythm Swimming Pool
+998,Fitness hub
+999,Fit N Trim
+1000,Priyadarshani Swimming Pool
+1001,Swim Sure Swimming Pool
+1003,Ozone Swimming Pool
+1004,Ramada Plaza Palm Grove
+1005,Sea Princess
+1006,Ramee Guestline Hotel Dadar Swimming Pool
+1008,Nike Run Club - Daniel Vaz
+1011,Savio D'Souza
+1013,Striders
+1017,Surbhi Health Club Swimming Pool
+1019,Lions Municipal Swimming Pool
+1020,48 Fitness
+1024,World Gym
+1026,Planet Health
+1027,Jerai Fitness
+1029,Your Fitness Club
+1030,Your Fitness Club
+1031,The Yoga House
+1032,Your Fitness Club
+1033,Your Fitness Club
+1034,Your Fitness Club
+1035,Your Fitness Club
+1038,Planet Health
+1039,Planet Health - Bhayandar
+1040,Planet Health
+1041,Elixir Gym
+1042,Sykz
+1043,Diet And Nutrition Clinic
+1046,Ananth Gorule
+1048,Kaivalyadhama Health Centre
+1049,Kobad Variava
+1052,Artwork Academy
+1055,Keep Fit Yoga & Aerobics Centre
+1057,Aarogyam Health Pvt Ltd
+1059,Aneeta Yoga
+1061,Cafe Nutrition
+1062,Neeraj Khanna
+1068,Lynx Gym
+1069,Yoga101
+1080,Richard's Academy of Dance and Arts
+1082,Gurpreet Kaur Chhabra
+1088,Swastik League Gym
+1089,Vaishali Doshi
+1090,Bhavika Gada
+1091,Rashika Chunawala
+1095,Neeta Modi
+1137,Yoga With Diksha
+1140,Calburn Yoga
+1143,Sharda Yoga Classes
+1148,Health Through Yoga
+1152,Yoga Classes And Training
+1154,Health Mantras
+1169,MIG Cricket Club
+1209,Tijos Dance Academy
+1211,Zumba Fitness and Dance Classes
+1214,The Danceworx Performing Arts Academy
+1215,Micky's Dance and  Fitness  Academy
+1217,Hips Dont Lie
+1218,Saif Creations
+1219,Get Fit With Tabi
+1224,The Zumba Party
+1225,Shalet Dance Academy
+1226,White Peakcook Dance Studio
+1230,Riaz Zumba Classes
+1232,Xplore Dance Company
+1233,Gold's Gym
+1238,Conrad Coelhos Dance
+1239,J J Rodriguez
+1241,Aashankur Nrityalay
+1242,Arpitas Step Up India
+1243,Madan Dance Trainor
+1244,Roshni's
+1245,Salsa India
+1251,Krutika Hobby Classes
+1253,Radhakrishna Dance & Studio
+1256,Kalasiddha
+1257,Gold's Gym
+1258,Invigorate Xercise Dance And Fitness Camp
+1259,Golds Gym
+1260,Golds Gym
+1261,Gold's Gym
+1262,Golds Gym
+1263,Gold's Gym
+1266,Golds Gym
+1267,Sandip Soparkars Ballroom Studio
+1269,Samyak Fitness
+1270,The Classique Club
+1277,Nikhil Bhagat
+1293,Elite Fitness Gamdevi
+1295,Elite Fitness
+1309,Body Sculptor - The Trainer Matters
+1330,Ancient Yoga
+1332,YOGVAN for health and happiness
+1334,Leena Mogre's Fitness - Mahim
+1335,ARADHANA YOGA STUDIO
+1337,Navchetna Classes
+1343,Shilpa's Yoga
+1344,Saifee Hospital Cam Dept
+1348,U-Can Health Care Centre
+1349,Yoga Topics
+1358,Alice
+1360,Bankin
+1365,Asif Shaikh Fitness Trainer
+1367,Tattwa Yoga By Pia
+1373,Riya Fitness
+1374,Namrata Yoga
+1376,Kadambari's Prenatal Yoga
+1377,Jagjyot Medical Yoga
+1379,Sangita's Yogasutra
+1380,Ozone The Gym
+1381,Yoga with Dr. Virdi
+1383,Fans of Yoga
+1388,Full Circle Yoga by Vandana Yadav
+1389,Func-Fit
+1392,Powerhouse Gym
+1393,Powerhouse Gym
+1395,Mandeep Hot Yoga
+1396,Jehangir Palkhivala
+1398,Dr Vinayak R Maurya
+1399,Zara The Royal Princess
+1400,90 Degree Fitness
+1401,Grace Yoga
+1402,Yoga With Aditya
+1403,Moksha Yoga & Dhyan Classes
+1406,Mamta Trivedi
+1413,Fitness First Oshiwara
+1414,Fit and fight club India
+1419,Fitness & Muscles Gym
+1420,Workout Gym
+1421,Inch by Inch
+1422,Inch by Inch
+1424,Rahul Saxennas Dance Connection
+1425,Fitness Hub Gym
+1427,Cloud 9 Fitness Club
+1428,Mind and Body Wellness Centre
+1429,Viikings Trance Fitness
+1430,Shivneri Gym
+1431,Radhika's Balanced Body
+1433,Dr.Bhagvati k. Dadhich
+1437,Square Health - Fitness, Gym And Sports Conditioning
+1439,V33 Gymnasium
+1441,The Island
+1442,Balance Nutrition by Khyati Rupani
+1445,Adil Dance Academy
+1447,Lotus Yoga and Wellness Centre
+1451,Talwalkars Bandra West
+1452,Talwalkars Vile Parle East
+1457,Talwalkars Kalwa
+1458,Talwalkars Mulund West
+1460,Talwalkars Bhayandar
+1470,Talwalkars Fitness Solutions
+1473,Kalaripayattu
+1476,Ali Personal Trainer
+1477,My Gym
+1480,Total Combat Fitness
+1483,Fitness Science
+1484,Anytime Fitness Lokhandwala
+1485,Cuts and Curves Fitness Club
+1486,Talwalkars
+1487,Talwalkars Ulhasnagar
+1488,Talwalkars Mira Road East
+1490,Bodyholics Combine Training Gym
+1491,Satish Naidu
+1492,Makarand Khedekar
+1493,Zumba with Master Trainer Sucheta Pal and Team
+1494,Entertrain Integrated Fitness
+1495,Anshuka Yoga
+1496,C'est La Vie
+1497,Nritya Studio
+1501,Aditi Deshpande
+1503,Arogyam Holistic Health Care
+1504,Naina Yoga House
+1505,Body Sculptz Studio
+1507,PSI Fitness
+1508,Sanoba Progressive Fitness
+1510,Posture Fitness
+1513,2Fit Gym
+1514,Exertech Gym
+1516,Kunal Jessanis Dance Classes
+1518,Fitness Mania Studio (Ladies Studio)
+1519,Vrushali Dance Class
+1520,Roshni Vakilna
+1522,Alexander Fernandes
+1523,Shonet's Dance Art Studio
+1528,Sanctum Fitness
+1532,Pratibha Yoga Classes
+1533,Ashtang Yoga
+1534,Shilpa Mittal
+1538,Yogic Concept and Lifestyle
+1539,Shahin S Khilji
+1540,Dr. Bhalchandra Patthe
+1541,Vinay Yoga & Meditation
+1542,Fitness Station
+1543,Shiva Yoga Center
+1544,ANTARANG YOGA
+1545,Rocky's Dance Academy
+1551,Ish Yoga
+1552,Captains Gym
+1554,Your Fitness Club
+1555,Kruti Shah
+1558,Smita Nanda
+1560,Deepak Tambitkar
+1563,Y - S Dance Academy
+1564,Bal Mitra Mandal Gym
+1572,Pathare Gymco
+1573,Life Fitness First
+1576,Kerkars Gym
+1577,16 Hour Fitness Lounge
+1579,Powerhouse Gym
+1580,Powerhouse Gym
+1581,Powerhouse Gym
+1582,Powerhouse Gym Hughes Road
+1583,Powerhouse Gym
+1584,Powerhouse Gym
+1587,Nyela Saeed Kapadia
+1591,Body Rhythm
+1592,Banas Gym
+1593,Jagruti Thaker
+1599,The School Of Classical Ballet and Western Dance
+1600,Ajinkya Natu
+1601,Dezire Institue of Performing Arts
+1602,Powerhouse Gym
+1603,Powerhouse Gym
+1604,Powerhouse Gym
+1605,Powerhouse Gym
+1606,Powerhouse Gym
+1607,Powerhouse Gym
+1608,Satish Sakpal
+1609,World Gym
+1611,Stamina Gym
+1613,Neha's Nutrifit
+1614,Neha's Nutrifit Grant Road
+1615,Mahesh Nair
+1616,Nitin's Dance & Fitness Studio - Nitin'S Dance Troupe & Company
+1618,Dance Destination
+1620,Kareena
+1622,Mix n Match Dance Academy
+1623,Temperance
+1624,Farzana Chauhan's All About Diet
+1627,Mithun Purandare
+1630,Sunaina Rekhi
+1633,Simon Dsouza
+1634,Rajesh Pol
+1636,Reebok Fitness Squad
+1639,Samanta Duggal
+1641,Yuj The Dance & Fitness Studio
+1642,Korean Combat Martial Arts Academy
+1645,Viikings Trance Fitness
+1646,Dance Beat Mumbai
+1647,Talwalkars Chembur East
+1649,Anil kumar Jaiswar
+1650,Freedom Holistic Wellness
+1655,Le Fitness Studio
+1656,Run India Run
+1658,Bout Martial Art Training And Fitness
+1659,Pravesh Bamte
+1660,U K Fitness
+1663,Ashwini Waskar
+1664,House Of Wow
+1666,Topgear
+1667,The Hive Gym
+1668,Shiamak Dance Academy
+1671,Waves Gym
+1673,The Wooden Stage
+1676,Kaustubh Bornare Kickboxing Academy
+1677,The Soul Studio
+1682,Zest 4 Life
+1683,Amit Sardal
+1684,Nasir Hussain
+1690,Aum Shanti Yoga
+1691,Zumba® with Yogesh Kushalkar
+1692,Mindfulness Yoga
+1693,Body Design
+1695,Gym Box
+1698,AAMAD - Performing Arts
+1704,Reebok Fitness Studio
+1705,Your Fitness Club
+1706,Your Fitness Club
+1707,Upendra Acharya
+1708,Yoga in Soul
+1709,Krunal Desai
+1710,Body & Soul Gym
+1711,Fitness Pitch Studio
+1712,Viva Fit for Women
+1715,Wasim Ansari
+1716,Avinash Patil
+1719,Natural Art Yoga Classes
+1720,Fitt Zzone
+1722,Vinod Rajput
+1727,Mujahid Khan
+1731,Sagar - Personal Trainer
+1732,Health Mantras
+1733,Style Gym
+1734,Fitness House
+1735,E-gym jogeshwari
+1737,E-gym
+1738,Swatantryaveer Savarkar Gym
+1739,Mickey Mehta's 360 Wellness
+1745,Darshan Health Club
+1747,Transform Gym
+1750,Befit
+1751,Dance People Studio
+1752,Fast Forward Dance Studio
+1754,Khuman Dance Yoga Fitness Studio
+1756,Tiny Steps Activity Centre
+1758,Naresh B Rathod International Dance Academy
+1759,Zeeba Khan
+1761,Ravi Dodhia
+1763,Mayank Panchal
+1764,Core Pilates by Sheetal Shah
+1765,Deepika Mehta Yoga
+1766,Tangerine Arts Studio
+1768,SFS Gym
+1769,Gati Fitness Center
+1770,I Think Fitness
+1771,Zumba with Illumination
+1772,Nazim Gazdhar
+1774,Sykz Activ
+1776,Poonam Singh Yoga Trainer
+1778,Zoya Mansoori
+1779,Shyarsh Doshi
+1782,National School Of Combat Arts
+1783,Zumba with Sukoon Rajani
+1784,Zumba with Priti
+1785,Talent Studio
+1786,On Cinq Dance Arts
+1791,Govind Aeer
+1792,Prakash Sonar
+1795,Chavarkar's Fitness Club
+1799,Tej Yog
+1801,Core Fitness
+1802,Sidhi Health Club
+1803,Fiber Fitness
+1805,Niwara
+1806,Passion Fitness
+1808,Sculpt Fitness Centre
+1809,I Fitness Destiny
+1813,Transform Gym
+1814,Muscle Factory
+1815,Fitness India
+1816,DanzoFit Studio
+1818,Shito Ryu Karate Do Kensho Bugei Kai
+1820,State of Shoonya
+1822,Power Punch Fitness Club
+1823,Tonis Power Play
+1824,Smiths Breathe Fitness
+1825,Lifepro Fitness Club
+1827,Enmotion Salsa
+1828,P40X Fitness Studio
+1829,Transform Wellness and Fitness
+1831,V's Fitness FITKIDZ
+1832,Divyayog
+1833,Sumeru School of Dance
+1834,Yoga And Management Center
+1837,Fight Elite MMA
+1840,Yoga Addicts
+1842,Contours
+1843,Absolute Fitness
+1845,Solaris
+1846,Dotfit Fitness
+1848,Indian Sports Academy of Martial Arts - Baner Gaon
+1850,Vandanas Power Yoga
+1853,Vibez
+1855,Latin Verve Dance Company
+1856,Urbounce Fitness
+1860,Golds Gym
+1863,Optimum Health
+1864,Optimum Health
+1865,Optimum Health
+1866,Chaitanya Health Club
+1867,Gravity Fitness Club
+1868,Endurance Fitness Club
+1869,Endurance Fitness Club
+1870,Your Fitness Club
+1871,Xfit fitness
+1873,Endurance Fitness - Lokhandwala
+1874,Golds Gym
+1875,Gold's Gym
+1876,Gold's Gym NIBM
+1878,Talwalkars F C Road
+1879,Talwalkars Gym
+1880,Talwalkars Gym
+1883,Fab The Gym
+1884,Art 4 Fun Recreation Hub
+1885,Capoeira Mumbai
+1889,Trinity  Music and Art Classes
+1890,Crazy Guys Dance Institute
+1891,Star Gym
+1893,Wildcard Fitness
+1892,Pune Fitness Club
+1894,Millenium Fitness Club
+1895,Khalsa Gyym
+1896,Zenith Fitness Club
+1897,Center Stage Institute of Performing Arts
+1900,Tejaswini Health Club (For Ladies)
+1901,Fitness First
+1903,Pride Fitness Center
+1904,Set Fit Gymnasium
+1905,Mustang Fitness Club
+1906,Anahat Yoga
+1908,Air Life Studio
+1909,Postures Yoga Studio
+1911,Orion Fitness
+1912,R Fitness Center
+1913,Silver Fitness Club
+1914,Streets Movement Dance Academy
+1915,Space Studio
+1917,Fitness One Health Club
+1918,Fitness World
+1920,Parag Gym
+1923,Rising Dance Academy
+1924,A One Health Club
+1926,Brawn Fitness Club
+1927,Stronger Leaner Faster - SLF Fitness And Athletic Training Center
+1928,Reebok CF at PDP
+1929,Olympus Health Club
+1932,Universal Shotokan Karate Do Association
+1933,My Gym
+1934,Beat Dance Studio
+1935,Multifit Wellness
+1936,Biorhythm India
+1937,Anti Gravity Biorhythm
+1938,The Pilates And Altitude Training Studio
+1939,Spring Board Fitness - Deepali Jain
+1940,XMenia Fitness Club
+1942,First Fitness (Only for Ladies)
+1946,Evolve Fitness And Wellness Club
+1952,My Fitness
+1955,City Point Fitness
+1959,JK Aerobics & Dance Classes
+1962,Slimline Fitness
+1965,Pilates WIth Kaizeen Motafram
+1967,Force Fitness Centre
+1968,Body Fuel
+1969,Nj's Fitness Center
+1970,Forma Fitness Club
+1971,Lyfe Indoor Cycling
+1973,D'Kulal Fitness Club
+1974,Suryaprakash Gym
+1976,Amigos Fitness Club
+1977,Fitness Guru
+1980,Physc Gym
+1981,Rock Hard Gym
+1982,Empire Fitness
+1983,La Gymnasio
+1984,MJK Academy Of Performing Arts
+1985,CastleWalk the Studio
+1986,Zumba with Sculptasse
+1987,Dynamix Fitness
+1988,Quality fitness club
+1989,Amida Fitness
+1992,International dance and Fitness centre
+1994,Hedayat Sir
+1995,Style Dance Institute
+1996,Vitality Fitness and Relaxation
+1997,Flames School of Dance
+1998,Fighters Taekwondo Academy
+2001,Flames School of Dance
+2002,Flames School of Dance
+2003,Karate Coaching Classes
+2004,Pink Studio
+2005,Zumba With Dhanashree Deshpande
+2006,Dance Addict
+2009,The Inspiration Dance School
+2011,Eco Fitness
+2013,Pulse The Studio
+2016,Savi's Dance Studio
+2017,Aeroblue Dance Arena
+2021,Forge Mixed Martial Arts
+2024,Rocky Poonawalas Dance School
+2025,Doctor's Fitness Zone
+2026,Karate Do India
+2027,Zumba with Nitin Nawghare
+2028,Mixed Martial Arts Pune
+2035,Power House Fitness Club
+2036,Fitness Freak
+2037,Galaxy Gym & Fitness Center
+2038,Arohead Fitness Club
+2039,Muscle Base Gym
+2044,CrossFit Chakra
+2047,Tanus Fitness World
+2050,Bodyguru Fitness Club
+2051,Pharaohs Health Club
+2055,Vaibhav Dance Academy
+2057,Keep Fit Gym
+2058,Vishal Gym
+2059,Stunt Riders
+2060,Haribhau Sane fitness club
+2061,Stepz Studio
+2066,Trimurtee Gym
+2067,Squats Fitness Center
+2070,Mission Fitness Health Club
+2071,Destiny Dance Academy
+2072,Medical Yoga
+2075,Sweat Gym
+2076,Shree Gym
+2079,Abs Fitness Wellness Club
+2081,Phoenix Gym
+2082,Ballerina Modern Dance School
+2083,Param Yoga
+2084,Nikhil Dance Studio
+2087,Yoga Center For Busy People
+2088,Mangesh Leles Dance Trak
+2090,Glamzone
+2092,Rising Institute Of Performing Arts
+2093,Just Knock 4 Dance Academy
+2101,A One Health Club
+2103,Sparks Gym
+2104,Pradeep Pawar Zumba Classes
+2105,Gold's Gym
+2106,Health Kraft Fitness Center
+2107,Zumba Fitness with Shweta Kulkarni
+2108,Dr.Zog - Yoga
+2109,Aarogya Siddhi Yog
+2111,Dancin Motion India
+2112,UPMA (Universal Power Martial Arts)
+2114,Setu Fitness Studio
+2115,Avenue Fitness Center
+2117,Imperial Fitness
+2119,Anahat Yoga
+2121,Symphony Health Club
+2126,Fab The Gym
+2127,Gnosis Yoga
+2128,Shri Gayatri Mahayog
+2129,Artemis Gym & Pool
+2130,Planet Fitness
+2131,Zeus Fitness Zone
+2132,Status Health Club
+2133,Origins Fitness Club
+2134,Endurance Fitness Club
+2135,Perfect Fitness Club
+2137,The Fitness Floor
+2138,Arms Fitness Club
+2140,Callipygian Gym
+2143,Spa Fitness
+2145,SEF Fitness
+2146,Elite Dance Studio
+2147,Core Fitness Club
+2148,Stretch Fitness and Beyond
+2152,Life Core Fitness
+2153,Kabir Baug Math Sanstha
+2154,Fitness Mantra
+2155,Pasos Loco
+2156,Core Fitness Club Balewadi
+2157,Sky Fitness
+2159,Pegasus Health Club
+2160,Ashoka Studio
+2161,Xternal Force Academy For Streets
+2162,Xternal Force Academy For Streets
+2165,Danzkatta
+2167,Anand Yoga Institute
+2168,Xternal Force Academy For Streets
+2169,Slimwell Fitness Studio (Only for Women)
+2173,F 5 Fitness Club
+2177,Vishwanand Center
+2181,Hanuman Gym
+2182,Soham Yoga
+2183,The Fitness Floor
+2185,Orient Combat Arts
+2187,Kaizen Wellness n Fitness Club at Kothrud
+2189,Aavishkar Dance Academy
+2190,Aavishkar Dance Academy
+2191,Satyam Yoga
+2193,Kung Fu Karate Association
+2194,Gold's Gym
+2195,Verve fitness club
+2196,Abs Fitness Wellness Club
+2197,Abs Fitness and Wellness Club
+2198,Abs Fitness Wellness Club
+2199,Abs Fitness and Wellness Club
+2200,ABS Fitness and Wellness Club
+2201,Abs Fitness Wellness Club (Only for EON Members)
+2203,Life Fitness Club
+2204,Vishwa Gym
+2207,Dumbelled
+2209,Tribal Combat
+2212,S2 Dance Academy
+2213,Funky Feet Dance Academy
+2215,Dance Planet Academy
+2216,S Square Fitness
+2217,Mrudang Dance Academy
+2219,Mrudang Dance Academy
+2220,Mrudang Dance Academy
+2221,Forever fitness
+2222,Physc Gym
+2223,Health Mantra Fitness
+2225,The Endeavour Fitness Club
+2227,Queens Ladies Fitness Centre
+2232,Slimwell Health Club And Manufacturers
+2235,Powerhouse Gym
+2236,Powerhouse Gym
+2238,Universal Fitness Club
+2240,Vs Worlds Fitness
+2241,Maruti Gym
+2242,Spynergy
+2243,Body Line Fitness Centre
+2244,Powerhouse Gym
+2249,Aerofit Health Club
+2250,Body Temple Gym
+2252,Fytnation
+2254,Bowelekar Health Center
+2257,Iron Fitness (Swasha Fitness Club)
+2260,Om Sai Health n Fitness
+2263,Fun and Fit Gym
+2277,Spirit 4 Vigor
+2278,Core Yoga (yogamoves)
+2281,Purple Grape
+2283,Rajan Jothady
+2284,Buddy Boxing Club
+2285,Bina Gandhi
+2287,LM The Fitness Academy
+2291,Soul Fitness Solution
+2292,Deep Dance Academy
+2293,Talwalkars Gym
+2295,Uro Fitness Club
+2296,Dynamic Fitness Center
+2302,Slim Fit Gym (Ladies Gym)
+2309,Zumba Plus by Simone Saiya
+2310,Yuvans Yoga
+2333,Impact Self Defense And Combat institute
+2343,Sweat Zone Fitness Studio
+2355,Make Me Fit - Maxx Fitness Management Pvt Ltd
+2361,Ram Dance Academy & Fitness Center – Yoga studio
+2362,Step Up Dance & Fitness Studio
+2368,Ankush Dance Academy
+2371,Suresh Karate Classes
+2374,Potential Activity Centre
+2375,Om Kirti Yoga Swastha Upchar Kendra
+2378,Synergy Fitness
+2380,Aaditya Hridayam
+2381,Panchavati Ayurvedic Kendra
+2382,Brahma Vidya Sadhak Sangh
+2386,Bliss The Yoga Studio
+2387,Shotokan Karate Do Federation
+2388,Synergy Martial Arts
+2390,Vrajesh Anand Dance Studio
+2391,Dance N Life
+2395,Different Strokes The Dance School
+2399,Sachins Dance and Aerobics Studio
+2400,Dance Pure
+2402,International Sendo- Ryu Karate Do & USA Sticky Hand Combat Jujutsu Federation Maharashtra
+2406,Polygon Gym & Fitness Studio
+2408,Star Dance Company
+2409,Slimwell Health Club
+2411,Step N Style Dance Studio
+2419,Core Fitness Gym For Men
+2421,AF 10
+2424,Myst Performing Arts
+2428,Talwalkars Hi-Fi
+2430,The Physical Self Defence Training Institution
+2431,International Japan Karate Association India
+2432,Energyia Gym
+2433,Tatya Pawar Yoga
+2435,Gravity Fitness
+2436,Nitro Sports & Fitness Centre
+2439,Heels Dance Academy
+2443,5 Fitness Goals
+2445,Fitness Connection
+2449,Falcon Gym
+2451,fit and fight club India Vashi
+2457,Zumba With Seema Patil
+2459,Zumba Fitness with Angelynn Rozario
+2462,Zumba Fitness with Krutika Joshi
+2463,Zumba Fitness with Dorothy Pirani
+2465,Zumba With Sanket Gandhi
+2474,Inspiration Hobby Centre
+2477,Apollo Gym The Art Of Fitness
+2478,Image The Health Spa
+2480,Unique Health
+2484,Naatyarang
+2492,AM Fitness
+2494,Popping Beats Studio,Kamothe
+2501,Bliss Fitness
+2505,Elevate Dance Institute
+2506,Elevate Dance Institute
+2522,Talwalkars Fitness Centre
+2523,Work Out World Fitness Center
+2534,Sumit Power Yoga Trainer
+2535,R1 Fitness Gym
+2537,Silver Gym
+2545,Golds Gym
+2547,Shree samarth Gym
+2560,Hip Hops Dance Academy
+2561,Ulka Mohan Salve Yoga Trainer
+2562,Pramod Utekar Fitness First
+2565,Mickey Mehtas 360 Wellness Temple
+2568,Anand Yoga Classes
+2575,Arun Chourasia
+2577,Hardik Rajendra Bhatt
+2578,Ian Fernandes1
+2579,Hemant Shroff
+2581,Nadeem Sayed
+2582,Nikesh Biswal
+2584,Raj Eppaturi
+2586,Rohit Ravindra Yezerkar
+2588,Yogesh Prabhakar Pawar
+2591,The Lifestyle Fitness
+2592,Force Fitness
+2605,Anchal's Yoga ( Dance N Life )
+2609,Body Zone Health Club
+2610,Prakash Sudarshan
+2612,Prashant Nikkam
+2621,SMA Fitness Centre
+2624,Happy Feet Dance Studion
+2628,Param Yoga
+2630,Param Yoga
+2632,Bikram Yoga
+2639,Look Good Fell Wellness Centre
+2640,Sammy Fitness Studio
+2646,Adhiyoga
+2649,Fussion Fitness
+2650,Cafe Solo Baila and Footworks
+2651,Gnosis Yoga
+2655,Anand Yoga Center
+2656,Jalsa Yoga Classes
+2659,Yes 2 Life
+2660,Ekveera Fitness
+2661,Urja Gym
+2662,Swasthya Yogopchar And Yog Margdarshan Kendra
+2663,Sungrace Yoga
+2665,Soulz Fitness Kondhwa
+2666,Fitness Forever ,Wadgoan Sheri
+2667,Pune Aikikai
+2668,Ramamani Iyengar Memorial Yoga Institute
+2669,The Yoga Light Studios
+2672,O Yoga Universal
+2673,Fitness Boom
+2675,Zahabbiya's Yoga Classes
+2677,Total Yoga
+2678,Total Yoga
+2680,Serenity Yoga Studio,Baner
+2684,Beat Breakers Dance Academy
+2686,Sidha Samadhi Yoga Institute
+2687,Yoga Academy
+2688,Yog Care 4 U
+2689,Yog Ahar Classes
+2694,Atharva Yoga Classes
+2695,Universal Gym
+2696,Shri Krishna Yoga Institute
+2697,Chandana Bhowmick
+2699,Vyakti Vikas Kendra
+2700,Bhartiyakirti
+2703,Uday Pendse Yoga Classes And Therapist
+2705,OM YOG Sadhana Varg
+2707,Shimmer Belly Dance
+2712,Shekhar's Dance Institute
+2713,Streets Movement Dance Academy
+2714,Rhydhun Dance Academy
+2715,Footloose Dance Academy
+2716,Rishi Sanskruti Vidya Kendra
+2717,Swasthya Yoga Kendra
+2719,Gurutatwa yoga
+2720,Kaivalya Yoga Institute
+2723,Lyfe Indoor Cycling
+2724,Yoganjali
+2728,Ultimate Fitness
+2729,Vinod Dudhal Yoga Training Institute
+2730,Ved Yoga Education And Research
+2731,Healthy Soul
+2734,RS Fitness Studio
+2735,Yogdarshan Yogasan Varg
+2736,Stepz Dance Academy
+2738,N Vie Fitness
+2739,Empower Fitness Club
+2740,Royal Fitness Club
+2741,Krishna Sure
+2743,Anand Yoga and Arts
+2746,Zumba Fitness with Avanti Kaisare
+2747,Arvinkumar Pande
+2748,Endurance Fitness Club
+2751,Lele Guruji Yoga Varga
+2753,Kaizens Wellness N Fitness Club
+2754,Yoga Todays
+2756,My Yoga Ville
+2757,Shapes Fitness Club
+2758,Madhavi Devtale Yoga Classes
+2759,Real Body Yoga Institute
+2767,ND Yoga traning center
+2768,Bhakti Pranayam & Yoga Centre
+2770,Yogsadhana Classes
+2771,Art Of Living Followup Center
+2773,Golden Fitness
+2774,Solaris
+2776,Swapnils Dance Studio
+2777,Solaris
+2778,Solaris
+2780,V Fitness Center
+2781,My Style Dance Academy
+2782,Xtrim Fitness
+2785,Beyond Fitness
+2786,AB's Fitness Club
+2794,Zumba Fitness with Deepa Kekade
+2799,Fitness Empire
+2804,Just fit ladies gym
+2806,Mickey Mehta 360° Wellness Temple
+2807,Param Yoga Studio
+2809,Optimum Health
+2813,Beyond Fitness
+2814,XMenia Fitness Club
+2818,Arts in Motion
+2821,Mickey Mehta 360° Wellness Temple
+2823,White Peacock Dance Studio
+2824,Mickey Mehta 360° Wellness Temple
+2825,Kaizens Fitness  Wellness Club
+2827,Energy24x7 - Functional Fitness Studio
+2828,Mickey Mehta 360° Wellness Temple
+2829,Three Left Feet
+2830,Fitness Arena
+2831,Oxyfit Premium Fitness Club [ Only for members ]
+2833,Mickey Mehta 360° Wellness Temple
+2839,The Lunges Health Club
+2840,Aerotrim Health Club
+2842,Kalamkar's Health Club
+2844,Mickey Mehta 360° Wellness Temple
+2845,Mickey Mehta 360° Wellness Temple
+2847,Fuel Fitness Club
+2848,Mickey Mehta 360° Wellness Temple Chembur Pool
+2851,Mickey Mehta 360° Wellness Temple Chandavarkar Road
+2852,Mickey Mehta 360° Wellness Temple Devidas Extension Road
+2854,Singh Fitness Centre
+2855,SFC Club
+2856,Set Fit Gym
+2857,Body Kraft Studio
+2860,Balanced Bodies
+2861,Evolv Dance Studio
+2862,Live Fit Fitness Centre
+2863,Krushnai Health Club
+2864,Runners Academy
+2865,Yoga Central
+2867,Valeosis Fitness
+2869,Functional Fitness Group
+2873,Work It Out Studio
+2874,Hermes Health Club
+2876,Prowess Gym
+2877,Enduro Fitness
+2878,Josh Fitness
+2879,Exhale Gym
+2880,JD Professional Personal Gym Trainer
+2881,B Fit Fitness Club
+2882,Devraj gym
+2883,Body Instact Gym
+2886,Strong fitness
+2887,B K Jambhulkar Health Club
+2888,Nagvekar Gymnasiums
+2889,GYM 96
+2890,Snap Fitness
+2892,NH fitness
+2895,Masters Gym
+2896,Sai Fitness Club
+2897,Ultra Fitness Health Club
+2899,Amit Gym
+2900,Sainath Gym
+2901,Perfect Gym
+2902,Magnum health world
+2904,Pooja Fitness Club
+2905,Dadoji Kondev Gym
+2908,Conquer Fitness
+2910,Focus 5
+2911,Soman Health Club
+2912,Planet Fitness
+2915,Gurudatta Gymnasium
+2916,Popular Health Club
+2917,Chavarkar fitness center
+2921,Sanitorium Gym
+2922,Life Style Gym
+2925,Gymbo Fitness Centre
+2927,Royal Fitness Club
+2928,Swamini Fitness Gym
+2930,Power NV
+2932,Kailasdham Fitness Centre
+2933,Uro Fitness Club
+2935,Brahma Fitness Club
+2936,Samarth Gymnasium
+2937,Reborn Gym
+2941,VGP Fitness Centre
+2943,Body Arts Gym & fitness club
+2945,Sudhakar Fitness Center
+2947,Oscar Health Step Academy
+2948,R H Zone
+2949,Prime Fitness
+2950,Tarai fitness club
+2951,Ajinkya Health Club
+2952,Kasture's Fitness
+2953,Anand Fitness Professional and Personal Trainer
+2959,Huns Health Club
+2962,Vishwalakshmi Gym
+2965,Satish Sathes Super Fitness
+2972,Nexus gym
+2973,Fusion Fitness
+2974,K Balaji Gym
+2975,R G's Fitness Club
+2976,Shiamak Davars Institute For The Performing Arts
+2977,Shiamak Davar's Institute For The Performing Arts
+2978,Shiamak Davars Institute For The Performing Arts
+2980,Dancing Angles Dance Academy
+2981,Dancing Angels Dance Academy
+2987,Dinesh Dance Factory
+2992,Dance Floor Studio
+2993,Bout Martial Art Training And Fitness
+2994,Naach Dance Company
+2995,Elements Of Life Fitness Centre
+2997,Funk And Fusion Dance Academy
+2998,Nikhil Dance Studio
+2999,Kirtis Dancing Curve
+3006,Tone Up With Props With Richa Wig
+3009,YTA (Young Talent Association)
+3012,V Power The Fitness Lounge
+3013,Goldys Gym
+3014,Shivam the Divine Steps
+3015,Shivam the Divine Steps
+3016,Shivam the Divine Steps
+3017,Studio 360
+3021,Warriors Dance Academy
+3022,Prajakta Bomble Zumba
+3025,Institute of Indian & Modern Music
+3028,Bounce The Studio
+3032,J Dance Academy
+3038,Dancing Curves
+3047,Unique Break Dance Academy
+3050,Natraj Kathak Nirtya Kala Mandir
+3053,Prema's Dance Academy
+3055,Avishkar Dance Academy
+3063,Best Hobby and Fitness Club
+3065,Neet Dance Academy
+3066,Destiny Dance Academy
+3068,Bollywood Dance And Acting
+3069,Akash Dance Classes
+3074,Cobra Fitness
+3075,Fitness with Viren
+3085,Tham Chands Martial Art & Total Fiteness
+3091,Vidyas Dance Academy
+3092,Vaishanavi Dance Studio
+3093,Milind Dance Academy
+3094,Komal Dance Academy
+3097,Nrutyadhyeya
+3100,Akram Dance Company
+3101,Akram Dance Company
+3102,Women's First
+3104,Vaishali Fitness & Sliming Centre
+3105,Reebok Crossfit
+3106,Pumping House
+3109,Svasti - The Fitness-Nutrition Studio
+3116,Be Fit With Suvesh
+3118,Anna's Gym
+3127,Club 7
+3129,YOGA Sadhana
+3136,Kundan Dance Academy
+3140,Versatile Dance Academy
+3146,Ajeet Dance Academy
+3149,Yoga Hut
+3152,Yasmeen's aerobics and yoga centre
+3156,Aditi Kolambkar – Rhythm
+3159,Dhriti Sachdev
+3160,Zumba with Zin Herick
+3163,Commando Fight Quest Mix Martial Arts Academy
+3166,Black Panther Warrior Combat Martial Arts Academy
+3170,Phoenix Fitness
+3172,Figurine Fitness at Koramangala Club
+3173,Shapes Fitness
+3175,Snap Fitness Centre Raja Rajeshwari Nagar
+3176,Goodlife Fitness
+3178,Snap Fitness J.P Nagar
+3179,Snap Fitness Sankey Road
+3180,I Fitness
+3183,Snap Fitness
+3184,Fitness cafe
+3185,O2 Fitness Zone
+3186,Cross Fit Gym
+3189,Fitness First India Pvt Ltd
+3191,Finix Fitness Studio
+3192,Snap Fitness
+3193,Apple Fitness
+3194,Power Cuts And Curves Gym And Fitness Centre
+3195,Temple Fitness
+3196,4S Fitness
+3197,Kaizen Fitness
+3199,Bootcamp Fitness Studio
+3200,B3 Wellness Studio
+3201,Snap Fitness, Whitefield
+3202,Haute Fitness
+3204,Snap Fitness, Rajaji Nagar
+3205,Fitness 9
+3207,Eternal Fitness Centre
+3208,Pure Life Gym
+3209,Vivafit For Women
+3210,Ben Body Studio
+3211,Fine Fettle Fitness
+3216,Zion Fitness
+3218,Gowdas Fitness Zone
+3220,Reach Fitness
+3222,Smug Bodies
+3225,D Sculpt Fitness
+3228,Curves Whitefield (Women's Only)
+3229,Curves Brookefield (Women's Only)
+3230,Flex N Fitness
+3231,Atom Fitness Complete
+3233,Snap Fitness, Munnekolal
+3235,B3 Wellness Studio
+3236,Bhagwans Gym
+3239,Chisel
+3243,Nirvana Fitness & Dance Centre
+3248,AFA Gym
+3251,Sweat Body Engineers
+3253,Energy Fitness
+3254,Natraj Muscle and Fitness
+3255,Kaizen Wellness n Fitness Club at Kondhwa
+3256,Kaizen Welness N Fitness Club at Wakad
+3259,Nani's School Of Fitness
+3264,Rajus Multi Gym
+3266,Dezire Fitness Center
+3273,National Gym
+3274,Roots Fitness Solutions
+3279,Reforma Fitness Center
+3280,Vishy Fit Gym
+3287,Sheks Gym
+3289,Life Ladies Millers Road
+3291,Zerolap Fitness Center
+3292,Body Craft Multi Gym
+3294,Royal Multi Gym
+3296,Foodureca
+3302,360 Workout Health And Fitness
+3305,eight packs by paadi's
+3307,Fitness Point
+3310,Power Fitness
+3313,Power Fitness
+3315,IGNIS Fitness Solution
+3317,Ben-Hur Gym and Fitness Center
+3322,Leon Maestro De Fitness
+3325,Shakthi Feel Fit Gym
+3326,Navi Fitness Gym
+3327,Kohinoor Muscles Gym
+3328,Arnold Fitness Zone
+3330,Snap Fitness
+3331,Snap Fitness
+3332,Snap Fitness Indiranagar Center A
+3333,Snap Fitness HSR Layout
+3335,Snap Fitness
+3336,Snap Fitness, Nagarbhavi
+3340,Fitness One
+3341,Snap Fitness
+3342,Snap Fitness, Matadahalli
+3343,Snap Fitness
+3344,Foodizm
+3345,Snap Fitness, Basavanagudi
+3346,Snap Fitness, Banashankari
+3347,Snap Fitness
+3350,Zela - Marathahalli
+3351,Zela - Residency Road
+3352,Ambience A Place For Fitness
+3357,The Health Point
+3359,Super Bodies
+3360,V Future Fitness
+3361,Celebrity Fitness
+3364,Creative Fitness Center
+3367,Me Fitness
+3369,Oxygen Gym and Fitness Center
+3370,A to Z Fitness
+3371,Fitness Edge
+3372,Sri Maruthi Fitness Core
+3378,Alpha Fitness
+3380,B3 Wellness Studio Bannerghatta Road
+3382,Studio One Eighty Nine- By BreakBeat Dance Co.
+3384,Sri Maruthi Core Fitness
+3385,Just Burn
+3386,Emerge
+3387,Mizpah Fitness JP Nagar
+3388,Flex Fitness
+3391,Empower Fitness
+3392,Sinew Fitness
+3394,Genesis
+3396,Absolute Fitness Forum
+3398,Affinity International
+3400,SoulCare
+3401,Yummy Tiffins
+3402,Magic - O - Meal
+3404,Dial - A - Diet
+3405,Vital Foods
+3408,Healthy Dabba
+3411,Body Shapes
+3412,Green Veggies
+3413,Bon Ami Fitness Gym Spa & Salon
+3415,SpiceBox
+3416,Club One Fitness and Health Studio
+3417,Core Fitness
+3421,Eagle Fitness
+3422,Club Prana Fitness Centre
+3424,Evolve Fitness Studio
+3425,Fit Life Gym
+3426,Fitness 9
+3428,Fitness Force
+3429,Fitness Freak
+3430,Fitness Guru
+3431,Fitness Hub
+3435,Golden Armour Fitness Zone
+3437,Hardik Fitness Center
+3439,J.P. Gym and Health Club
+3440,Aditya Fitness
+3443,LF2 Fitness
+3444,Mega Muscle Fitness Point
+3446,Sargam Dance Academy
+3447,Sargam Dance Academy
+3449,Muscle tribe
+3450,Muscle Tribes Gym
+3451,Sweat On Fitness
+3452,Mahesh Dance Academy
+3454,Academy of Traditional Shotokan Karate Do
+3455,Ability Fitness Studio
+3456,N-Gage Fitness Center
+3457,O2 The Fitness-BTM 2
+3458,O2 The Fitness Koramangala
+3461,Yogasan Class
+3462,Fast Forward Dance Studio
+3463,Fast Forward Dance Studio
+3464,R2 Fitness Revolution
+3465,Fast Forward Dance Studio
+3467,Kerkars Fitness
+3468,Relish fitness and beauty spa
+3472,Fast Forward Dance Studio
+3473,Chatpata Chef
+3476,Steve's Gym
+3485,Dial Organic
+3487,Total Fitness
+3489,Universal Gym & Fitness Center
+3491,WTF (Whitefield Total Fitness)
+3493,Body Fit Gym
+3495,Trihedron DVG Road
+3496,Tiffin Express
+3497,Abs and Curves
+3499,National Corps Vasanth Nagar
+3500,G M Gymnasium
+3502,Balanced Meals
+3503,Fitness World Gym
+3504,Play on Fitness
+3505,Feast in a Tray
+3508,Xtreme Fitness
+3510,Ultimate Bodies
+3518,Dr. Kitchen
+3519,Spoton Multi Fitness
+3522,Nishreen Parekh
+3523,Sumits Academy of Dance
+3524,Ladies Fitness Center
+3526,The Professional Fitness Centre
+3529,Vigor Fitness Arena
+3534,Power House Gym
+3537,Heart Beat Fitness
+3538,Classic Fitness Centre
+3540,Athena Gym and Fitness
+3541,Jai Bheem Multi Gym
+3547,Revive Fitness Solutions
+3551,Life Fitness Nandi Durga Road
+3552,The Fitt Club
+3555,Euro Fit Gym
+3556,Fitness Maniac
+3557,Shape Up
+3565,Mizpah Fitness Bannerghatta Road
+3566,Platinum Fitness
+3568,The Body Zone Gym
+3574,Cutz n Curvz Fitness
+3575,Pure Soul with Yoga
+3576,Yogatech
+3579,Prosport Fitness
+3585,RG Fitness Zone
+3586,Signature Fitness
+3594,Sun Fitness World Gym
+3595,Sun Fitnez World Gym
+3596,Macho Gym & Fitness
+3600,Body and Mind studio
+3607,Niramayah Wellness And Beyond
+3609,Yug Yoga
+3610,Sowmiya Yoga & aerobics
+3612,SGS International Yoga Foundation
+3614,Sparsh Motivation Center
+3616,Change Me
+3617,Yamuna Fitness Centre
+3618,a1000 Yoga Koramangala
+3619,a1000 Yoga Indiranagar
+3620,a1000 Yoga Whitefield
+3622,Aayana Yoga Academy
+3623,Adithya Sai Yoga Centre
+3625,Anshi Yoga Centre
+3627,Asian Woman The Villa
+3628,Zumba® with Hiral Savla
+3629,Aurobindo Yoga Classes
+3634,Fit N Fine Ozone Health Care Center
+3636,Healing Touch Centre for Ayurveda & Yoga
+3638,Maitri Foundation
+3642,Mbs Holistic Clinic
+3646,Shastry's Yoga Center
+3649,Sri K. Pattabhi Jois Ashtanga Yoga
+3654,Total Yoga Indiranagar
+3655,Vishwa Poornima's Yoga Center
+3658,Nlitn Holistic Wellness Center
+3660,Yoga Wellness Centre
+3662,Tapovana Yoga Therapy Home
+3663,Joy Yoga Centre Association
+3665,Rashtrotthana Yoga Centre
+3666,Yogi-Sthaan
+3667,August Yoga
+3671,Surya Jyothi Yoga Vedanta Centre
+3673,Sri K. Pattabhi Jois Ashtanga Yoga
+3675,Yoga Dhama
+3676,Vismaya Yoga
+3678,Total Yoga Whitefield
+3679,Total Yoga Koramangala
+3680,Total Yoga Kasturba Road
+3681,Sri Balaji Yoga Kendra
+3683,Sri Balaji Yoga Kendra
+3684,Yoganjali
+3692,Bharat Thakur's Artistic Yoga Indiranagar
+3694,Yogavedagram
+3696,Yakhsha Yoga
+3699,Yoga Gangothri trust
+3700,Yoga Gangotri Trust
+3702,XLNC Dance Company
+3711,Butterfly Talent Academy
+3712,Rhythms Institiue of Fine Art
+3713,Euphoria Dance & Music Academy
+3714,Natyanjali School of Dance
+3716,Hip Hop India Dance
+3718,Shape Aerobics Classes
+3719,Nrityantar Academy Of Performing Arts
+3720,Aero Fitness Centre Koramangala
+3722,Samatvam - A Holistic health Centre
+3723,Sivananda Yoga Vedanta Centre
+3730,Samyama Institute of Yogic sciences and Research Foundation
+3731,Swami Vivekanananda Yoga Anusandhana Samsthana
+3732,Swami Vivekanananda Yoga Anusandhana Samsthana
+3736,Swami Vivekanananda Yoga Anusandhana Samsthana
+3743,Swami Vivekanananda Yoga Anusandhana Samsthana
+3751,Force Vitale
+3757,Harsha Yoga
+3765,Rashtrothana Yogic Sciences & Research Institute-Kalyan Nagar
+3766,Rashtrothana Yogic Sciences & Research Institute
+3767,Simaroudha Yoga And Naturopathy Centre
+3769,Yogavijnana
+3773,Divya Yoga Centre
+3774,Akshar Power Yoga Academy
+3775,Akshar Power Yoga Academy Indiranagar
+3777,Akshar Power Yoga Academy
+3779,Bhargava Rama Yoga Classes
+3781,Original Soul Dance
+3784,Cadenza Dance And Music Academy
+3791,Shambhavi School Of Dance
+3792,Amrit Yoga
+3795,Shambhavi School Of Dance
+3796,Shambhavi School Of Dance
+3799,All Them Moves
+3800,Smart Foundation
+3802,Vesoma Fitness
+3803,Attitude Dance Academy
+3804,Zealers Dance Studio
+3805,The Performerz
+3807,Studio Venus Jayanagar
+3808,The Studio
+3809,The Swingers
+3812,Neolife Yoga Studio AECS Layout
+3820,Shambhavi School of Dance
+3821,Studio Venus Kumaraswamy Layout
+3828,Health Is Wealth
+3830,Janaki Yoga Centre
+3831,Yogasana
+3835,Vask Yoga Centre
+3843,Pradipika Institute of Yoga and Therapy
+3845,Arogya Mandira Trust
+3847,Zumba With Neha Hiremath
+3848,Bliss Yoga And Wellness
+3850,Zumba With Ayesha Chinoy
+3851,Zumba With Poojalaxmi Shinde
+3853,Zumba With Vidhi Parekh
+3854,Zumba Fitness With Chetan Agarwal
+3856,The Phoenix Dance Studio
+3857,Dhhiraj Dance Dimensions
+3859,Blue Dragon Mixed Martial Arts Academy
+3860,Sam Boxing Gym
+3862,Kyokushin Karate
+3863,Xtreme MuayThai Academy
+3864,The School of Martial Arts
+3869,Buharli Martial Arts
+3871,Fitness Fight Club
+3875,Japan Karate Do Hakuakai Organization
+3876,Badazz Krav Maga - Wilson Garden
+3878,Red Pepper Martial Arts JP Nagar
+3879,Sailum Martial Art Academy Of India
+3880,Taureaux Taekwondo Academy
+3881,The Great Indian Budokai Karate Do Training School
+3895,Taekwondo Association Of Karnataka
+3900,Century Fitness Hub
+3901,Payals Dance Academy
+3904,Payals Dance Academy Jayangar
+3905,Payals Dance Academy Kalyan Nagar
+3906,Payals Dance Academy Koramangala
+3907,Payals Dance Academy Indiranagar
+3908,Shiamak Davar Institute of Performing Arts
+3916,Body Quest
+3917,Good Health And Fitness Zone
+3918,Vinay Ratnasiddi International Institute for Performing Arts
+3919,Haadee Fitness Floor and Gym
+3921,Vinay Rathasiddi International Institure for Performing Arts
+3922,Vaishnavi Natyashala
+3926,Mayuri Cultural Academy
+3927,Pain and Gain Fitness
+3929,Reforma Fitness Center
+3930,Rock In Rhythm
+3931,Shine Fitness
+3935,Self Defence School Of Indian Karate
+3937,Hamsa Hastha Martial Art
+3938,Hamsa Hastha Martial Art
+3942,Shaolin Shi KungFu
+3943,Shaolin Shi Kung Fu
+3949,Parashurama Vallabhatta Kalari Academy
+3953,Klub Fit
+3956,Zumba With Vidya Tikotkar
+3957,Sizzlers Dance & Music Studio
+3960,Calorie Care
+3963,Palladium Dance Studio
+3965,Fitness Gear/VO2 Max
+3970,Stepperz
+3972,Hyper Monkey Fitness
+3974,Nrithyadegula School Of Dance
+3975,The Workouts
+3977,Goodlife Fitness
+3980,Vriddhi
+3982,Chrysalis Hub
+3984,Gagzz Fitness
+3985,Stepperz
+3987,Badazz Krav Maga - BTM Layout
+3989,Ramana Boxing Club
+3990,Parashurama Vallabhatta Kalari Academy
+3994,IDK Martial Arts
+3997,King Kick Martial Arts Academy
+4003,Suraj Thekkan Kalari
+4006,Badazz Krav Maga - Kormangala
+4007,Badazz Krav Maga - New Bel Road
+4009,Shotokan Karate - Do India
+4011,M S Gurukkal's Kadathanadan Kalari Academy
+4013,SHP MMA
+4015,Fiitness Plus
+4017,Swayum Yoga
+4018,Zen Fitness Studio
+4019,Dance Sport India
+4020,B Boom Dance Academy
+4021,F6 Fitness Planet
+4022,Fitness Fuel
+4025,Daljit Gymko
+4028,Shashi Singh
+4029,Fitness Solutions
+4030,Intensity Fitness Center
+4032,Socio Fitness
+4034,Spedals Fitness Center
+4035,Strong N Slender
+4038,Shotokan Karate Classes
+4041,GROUP EX FITNESS CLUB
+4043,Energizer Fitness Centre And Aerobic Studio
+4044,Aero Fitness Center
+4045,Studio Venus
+4046,Studio Venus Btm Layout
+4047,Ontoez
+4048,Studio Venus HSR Layout
+4049,Studio Venus JP Nagar
+4050,Studio Caadencia
+4051,Studio Caadencia
+4057,360 Degree Workout
+4059,Fitness Time Frazer Town
+4060,BDFA Arekere
+4064,Studio Nritta
+4065,Genesis
+4068,Nritarutya Dance Studio
+4070,Lewis Foundation Of Classical Ballet
+4073,Genesis
+4076,Natyalaya
+4080,Nrityaarpana Institute of Kuchipudi Dance
+4082,Sanjay Dance Planet
+4083,Ramis Dance Inc
+4088,D4U
+4089,Dance Planners
+4092,Super Fit Aerobics and Dance Academy
+4094,Nitara Kathak Dance Classes
+4096,Genesis - the fitness forum
+4098,Tarantismo Creative Dance Company Kamanahalli
+4099,Tarantismo Creative Dance Company Koramangala
+4100,Spinners Dance Studio
+4105,Gandharva Music And Dance Institute
+4107,Sri Sapthanga Natya Kala Academy
+4108,Saraswathi Dance Academy
+4111,Energia
+4114,Street Titanz
+4115,Flush Institute of Health And Fitness
+4119,Body Care Fitness Centre
+4122,Lis Arcade
+4123,Krshala Dance Theatre
+4124,Keshava Nrithyashala
+4126,Nikkon Dance Classes
+4127,D9 Dance Studio
+4133,Vinscent Art World
+4137,Taralabalu Kendra
+4141,Cloud 9 Fitness Club
+4142,Nitrro Bespoke Fitness
+4144,Drishti Art Centre
+4156,Ashtanga Yoga Classes
+4158,Body Kraft Fitness Studio
+4159,Bounce Fitness Studio
+4163,Glitterers Centre for Dance
+416

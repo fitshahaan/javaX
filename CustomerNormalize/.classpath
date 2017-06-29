@@ -7,6 +7,8 @@
 	<classpathentry kind="lib" path="libs/httpcore-4.4.3.jar"/>
 	<classpathentry kind="lib" path="libs/json-simple-1.1.1.jar"/>
 	<classpathentry kind="lib" path="libs/org-apache-commons-logging.jar"/>
-	<classpathentry kind="lib" path="libs/mongo-java-driver-2.12.3.jar"/>
+	<classpathentry kind="lib" path="libs/bson-3.4.0-beta1.jar"/>
+	<classpathentry kind="lib" path="libs/mongodb-driver-3.4.0-beta1.jar"/>
+	<classpathentry kind="lib" path="libs/mongodb-driver-core-3.4.0-beta1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

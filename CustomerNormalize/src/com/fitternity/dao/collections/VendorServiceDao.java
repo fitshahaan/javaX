@@ -9,6 +9,7 @@ import com.fitternity.dao.beans.Customer;
 import com.mongodb.BasicDBObject;
 import com.mongodb.BasicDBObjectBuilder;
 import com.mongodb.BulkWriteOperation;
+import com.mongodb.Bytes;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
@@ -18,15 +19,15 @@ import com.mongodb.WriteResult;
  * @author shahaan
  *
  */
-public class VendorDao extends BaseCollection
+public class VendorServiceDao extends BaseCollection
 {
 	DBCollection collection;
 
-	public VendorDao(DBCollection collection) {
+	public VendorServiceDao(DBCollection collection) {
 		// TODO Auto-generated constructor stub
 		this.collection=collection;
 	}
-	public VendorDao() {
+	public VendorServiceDao() {
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -38,22 +39,15 @@ public class VendorDao extends BaseCollection
 //		}
 	}
 	
-	public DBObject getVendor(Number id) {
-		
-		System.out.println("id"+id);
-		DBObject query = BasicDBObjectBuilder.start().add("_id", id).get();
-		System.out.println(query );
-		DBObject cursor = collection.findOne(query);
-		System.out.println("cursor"+cursor);
+	public DBCursor getVendorServices(Number vendorId) 
+	{
+		DBObject query = BasicDBObjectBuilder.start().add("vendor_id", vendorId).get();
+		DBCursor cursor = collection.find(query);
+		System.out.println("getVendorServices :: "+query);
+		cursor.addOption(Bytes.QUERYOPTION_NOTIMEOUT);
+		System.out.println("TOTAL SIZE ::"+cursor.count());
 		return cursor;	
 	}
-public DBCursor getVendors() {
-		DBCursor cursor = collection.find(new BasicDBObject());
-		System.out.println("cursor"+cursor);
-		return cursor;	
-	}
-	
-	
 	public DBObject getCustomerBasedOnEmail(String emailId) {
 		DBObject query = BasicDBObjectBuilder.start().add("email", emailId).get();
 		DBObject cursor = collection.findOne(query);
@@ -136,6 +130,7 @@ public DBCursor getVendors() {
 		System.out.println(cursor.getUpsertedId());
 		System.out.println(cursor.getN());
 		System.out.println(cursor.isUpdateOfExisting());
+
 	}
 	
 }

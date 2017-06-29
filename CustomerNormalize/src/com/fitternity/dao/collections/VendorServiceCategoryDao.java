@@ -18,15 +18,15 @@ import com.mongodb.WriteResult;
  * @author shahaan
  *
  */
-public class VendorDao extends BaseCollection
+public class VendorServiceCategoryDao extends BaseCollection
 {
 	DBCollection collection;
 
-	public VendorDao(DBCollection collection) {
+	public VendorServiceCategoryDao(DBCollection collection) {
 		// TODO Auto-generated constructor stub
 		this.collection=collection;
 	}
-	public VendorDao() {
+	public VendorServiceCategoryDao() {
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -38,22 +38,15 @@ public class VendorDao extends BaseCollection
 //		}
 	}
 	
-	public DBObject getVendor(Number id) {
-		
-		System.out.println("id"+id);
-		DBObject query = BasicDBObjectBuilder.start().add("_id", id).get();
-		System.out.println(query );
-		DBObject cursor = collection.findOne(query);
-		System.out.println("cursor"+cursor);
-		return cursor;	
+	public Number getCategoryId(String name) {
+		DBObject query = BasicDBObjectBuilder.start().add("name", name).get();
+		BasicDBObject b=new BasicDBObject("name",name );
+		System.out.println(" QUERY :: "+b);
+		System.out.println(collection.getName());
+		DBObject cursor = collection.findOne(b);
+		System.out.println("category.primary" +cursor);
+		return (Number)cursor.get("_id");	
 	}
-public DBCursor getVendors() {
-		DBCursor cursor = collection.find(new BasicDBObject());
-		System.out.println("cursor"+cursor);
-		return cursor;	
-	}
-	
-	
 	public DBObject getCustomerBasedOnEmail(String emailId) {
 		DBObject query = BasicDBObjectBuilder.start().add("email", emailId).get();
 		DBObject cursor = collection.findOne(query);
@@ -119,7 +112,12 @@ public DBCursor getVendors() {
 //		System.out.println(" NEW CUSTOMER INFO :: "+dbObject);
 		return ((collection.insert(dbObject)!=null)?true:false);
 	}
-	
+	public DBObject getCategory(Number id) {
+		DBObject query = BasicDBObjectBuilder.start().add("_id", id).get();
+		DBObject cursor = collection.findOne(query);
+		System.out.println("getCategory "+query);
+		return cursor;	
+	}
 	public BulkWriteOperation getBulkWriteOp()
 	{
 		BulkWriteOperation  bulkWriteOperation= collection.initializeUnorderedBulkOperation();

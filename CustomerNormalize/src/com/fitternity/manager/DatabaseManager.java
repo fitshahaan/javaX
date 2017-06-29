@@ -3,12 +3,16 @@ package com.fitternity.manager;
 import com.fitternity.abstracthelpers.BaseCollection;
 import com.fitternity.dao.collections.CityDao;
 import com.fitternity.dao.collections.CustomerDao;
+import com.fitternity.dao.collections.DeviceDao;
 import com.fitternity.dao.collections.LocationClusterDao;
 import com.fitternity.dao.collections.LocationDao;
 import com.fitternity.dao.collections.OzoneTelDao;
 import com.fitternity.dao.collections.ReviewDao;
 import com.fitternity.dao.collections.TransactionDao;
+import com.fitternity.dao.collections.VendorCategoryDao;
 import com.fitternity.dao.collections.VendorDao;
+import com.fitternity.dao.collections.VendorServiceCategoryDao;
+import com.fitternity.dao.collections.VendorServiceDao;
 import com.fitternity.enums.Collections;
 import com.fitternity.enums.Databases;
 import com.mongodb.DB;
@@ -61,6 +65,10 @@ public class DatabaseManager
 		case LOCATIONCLUSTERS: 	return new LocationClusterDao(db.getCollection(name.toString()));
 		case CITIES: 	return new CityDao(db.getCollection(name.toString()));
 		case REVIEWS: 	return new ReviewDao(db.getCollection(name.toString()));
+		case DEVICES: 	return new DeviceDao(db.getCollection(name.toString()));
+		case VENDORSERVICECATEGORIES: 	return new VendorServiceCategoryDao(db.getCollection(name.toString()));
+		case VENDORSERVICES: 	 return new VendorServiceDao(db.getCollection(name.toString()));
+		case VENDORCATEGORIES:   return new VendorCategoryDao(db.getCollection(name.toString()));
 		default:return null;
 		}
 	}

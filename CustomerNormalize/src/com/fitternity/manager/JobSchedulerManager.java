@@ -2,26 +2,18 @@ package com.fitternity.manager;
 
 import static com.fitternity.enums.Jobs.NORMALIZECUSTOMERID;
 import static com.fitternity.enums.Jobs.OZONETELCUSTOMERMAPPER;
+import static com.fitternity.enums.Jobs.UNSUBSCRIBECUSTOMERS;
 
 import java.util.HashMap;
 import java.util.Timer;
 
-import com.fitternity.abstracthelpers.BaseCollection;
 import com.fitternity.constants.AppConstants;
 import com.fitternity.constants.CronConstants;
-import com.fitternity.dao.collections.CustomerDao;
-import com.fitternity.dao.collections.OzoneTelDao;
-import com.fitternity.dao.collections.TransactionDao;
-import com.fitternity.dao.collections.VendorDao;
 import com.fitternity.enums.Jobs;
 import com.fitternity.jobs.NormalizeCustomerId;
 import com.fitternity.jobs.OzonetelCustomerMapper;
 import com.fitternity.jobs.UnsubscribeCustomers;
 import com.fitternity.util.PropertiesUtil;
-import com.mongodb.DB;
-import com.mongodb.MongoClient;
-import com.mongodb.util.Hash;
-import static com.fitternity.enums.Jobs.UNSUBSCRIBECUSTOMERS;
 /**
  * @author shahaan
  *

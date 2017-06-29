@@ -5,6 +5,8 @@ import static com.fitternity.enums.Environments.PRODUCTION;
 import static com.fitternity.enums.Environments.STAGING;
 
 import java.net.UnknownHostException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.fitternity.abstracthelpers.BaseCollection;
@@ -22,6 +24,9 @@ import com.fitternity.enums.Environments;
 import com.fitternity.util.PropertiesUtil;
 import com.mongodb.DB;
 import com.mongodb.MongoClient;
+import com.mongodb.MongoCredential;
+import com.mongodb.ServerAddress;
+import com.mongodb.client.jndi.MongoClientFactory;
 
 /**
  * @author shahaan
@@ -98,49 +103,33 @@ public class TransactionManager implements AppConstants,DBConstants
 	{
 						setEnvironment();
 						System.out.println(" THIS ENV :: "+this.env);
-		try {
-			switch (this.env)
-			{
-			case LOCAL:  this.mongoClient= new MongoClient(PropertiesUtil.getDBConnectionProperty(API_HOST), Integer.parseInt(PropertiesUtil.getDBConnectionProperty(API_PORT)));
+		switch (this.env)
+		{
+		case LOCAL:  this.mongoClient= new MongoClient(PropertiesUtil.getDBConnectionProperty(API_HOST), Integer.parseInt(PropertiesUtil.getDBConnectionProperty(API_PORT)));
+					 break;
+		case STAGING:	
+//			            System.out.println("DB AUTHENTICATION  RESULT :: "+databaseManager.getDb().addUser(PropertiesUtil.getDBConnectionProperty(API_USERNAME), PropertiesUtil.getDBConnectionProperty(API_PASSWORD).toCharArray()));
+//						MongoCredential credential = MongoCredential.createCredential(PropertiesUtil.getDBConnectionProperty(API_USERNAME),Environments.STAGING.toString(), PropertiesUtil.getDBConnectionProperty(API_PASSWORD).toCharArray());
+						
+						ArrayList<ServerAddress> serverAddresses=new ArrayList<>();
+						serverAddresses.add(new ServerAddress(PropertiesUtil.getDBConnectionProperty(API_HOST), Integer.parseInt(PropertiesUtil.getDBConnectionProperty(API_PORT))));
+						ArrayList<MongoCredential> credentials=new ArrayList<>();
+						credentials.add(MongoCredential.createCredential(PropertiesUtil.getDBConnectionProperty(API_USERNAME),Databases.FITADMIN.toString(), PropertiesUtil.getDBConnectionProperty(API_PASSWORD).toCharArray()));
+						credentials.add(MongoCredential.createCredential(PropertiesUtil.getDBConnectionProperty(API_USERNAME),Databases.FITAPI.toString(), PropertiesUtil.getDBConnectionProperty(API_PASSWORD).toCharArray()));
+//						serverAddresses.add(new ServerAddress(PropertiesUtil.getDBConnectionProperty(API_HOST), Integer.parseInt(PropertiesUtil.getDBConnectionProperty(API_PORT))));
+//						serverAddresses.add(new ServerAddress(PropertiesUtil.getDBConnectionProperty(ADMIN_HOST), Integer.parseInt(PropertiesUtil.getDBConnectionProperty(API_PORT))));
+						this.mongoClient = new MongoClient(serverAddresses,credentials);
+//						new MongoClient(seeds, credentialsList)
+						isAuthenticated=true;
+
+//					this.mongoClient= new MongoClient( PropertiesUtil.getDBConnectionProperty(API_HOST) ,Integer.parseInt(PropertiesUtil.getDBConnectionProperty(API_PORT)));
+					break;
+		case PRODUCTION:
+						this.mongoClient= new MongoClient( PropertiesUtil.getDBConnectionProperty(API_HOST) , Integer.parseInt(PropertiesUtil.getDBConnectionProperty(API_PORT)));
 						 break;
-			case STAGING:
-						this.mongoClient= new MongoClient( PropertiesUtil.getDBConnectionProperty(API_HOST) ,Integer.parseInt(PropertiesUtil.getDBConnectionProperty(API_PORT)));
-						break;
-			case PRODUCTION:
-							this.mongoClient= new MongoClient( PropertiesUtil.getDBConnectionProperty(API_HOST) , Integer.parseInt(PropertiesUtil.getDBConnectionProperty(API_PORT)));
-							 break;
-			default: this.mongoClient= new MongoClient( PropertiesUtil.getDBConnectionProperty(API_HOST), Integer.parseInt(PropertiesUtil.getDBConnectionProperty(API_PORT)));
-					 	break;
-			}
-		} catch (UnknownHostException e) {
-			
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		default: this.mongoClient= new MongoClient( PropertiesUtil.getDBConnectionProperty(API_HOST), Integer.parseInt(PropertiesUtil.getDBConnectionProperty(API_PORT)));
+				 	break;
 		}
-		// TODO Auto-generated method stub
-		/*try 
-		{
-			if(type.equals("local"))
-			{
-				this.mongoClient= new MongoClient( "localhost" , 27017 );
-				this.type=type;
-				return true;		
-			}
-			else if(type.equals("staging"))
-			{
-//				this.mongoClient= new MongoClient( "localhost" , 27017 );
-				this.mongoClient= new MongoClient( "35.154.147.1" , 27017 );
-				this.type=type;
-				return 	true;
-			}
-			else
-				return false;
-		}
-		catch (UnknownHostException e) 
-		{
-			e.printStackTrace();
-			return false;
-		}*/
 	}
 	
 	public BaseDatabase getDB(String dbName)
@@ -175,11 +164,16 @@ public class TransactionManager implements AppConstants,DBConstants
 		System.out.println(" databaseManager.getDb() ::  "+databaseManager.getDb());
 		System.out.println(" Environments.STAGING.equals(type) "+Environments.STAGING.equals(env));
 		System.out.println(" isAuthenticated "+isAuthenticated);
-		if(Environments.STAGING.equals(env)/*&&!isAuthenticated*/)
+		/*if(Environments.STAGING.equals(env)&&!isAuthenticated)
 		{
-			databaseManager.getDb().authenticate(PropertiesUtil.getDBConnectionProperty(API_USERNAME), PropertiesUtil.getDBConnectionProperty(API_PASSWORD).toCharArray());
+			databaseManager.setDb(db);
+			System.out.println("DB AUTHENTICATION  RESULT :: "+databaseManager.getDb().addUser(PropertiesUtil.getDBConnectionProperty(API_USERNAME), PropertiesUtil.getDBConnectionProperty(API_PASSWORD).toCharArray()));
+			MongoCredential credential = MongoCredential.createCredential(PropertiesUtil.getDBConnectionProperty(API_USERNAME),Environments.STAGING.toString(), PropertiesUtil.getDBConnectionProperty(API_PASSWORD).toCharArray());
+			this.mongoClient = new MongoClient(new ServerAddress(PropertiesUtil.getDBConnectionProperty(API_HOST), Integer.parseInt(PropertiesUtil.getDBConnectionProperty(API_PORT))),
+                    Arrays.asList(credential));
+//			authenticate(PropertiesUtil.getDBConnectionProperty(API_USERNAME), PropertiesUtil.getDBConnectionProperty(API_PASSWORD).toCharArray());
 			isAuthenticated=true;
-		}
+		}*/
 			
 		return databaseManager;
 	}

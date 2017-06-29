@@ -18,15 +18,15 @@ import com.mongodb.WriteResult;
  * @author shahaan
  *
  */
-public class VendorDao extends BaseCollection
+public class VendorCategoryDao extends BaseCollection
 {
 	DBCollection collection;
 
-	public VendorDao(DBCollection collection) {
+	public VendorCategoryDao(DBCollection collection) {
 		// TODO Auto-generated constructor stub
 		this.collection=collection;
 	}
-	public VendorDao() {
+	public VendorCategoryDao() {
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -38,22 +38,18 @@ public class VendorDao extends BaseCollection
 //		}
 	}
 	
-	public DBObject getVendor(Number id) {
-		
-		System.out.println("id"+id);
-		DBObject query = BasicDBObjectBuilder.start().add("_id", id).get();
-		System.out.println(query );
+	public Number getCategoryId(String name) {
+		DBObject query = BasicDBObjectBuilder.start().add("name", name).get();
 		DBObject cursor = collection.findOne(query);
-		System.out.println("cursor"+cursor);
+		System.out.println("cATEOFRY ID NAME "+cursor.get("category.primary"));
+		return (Number)cursor.get("category.primary");	
+	}
+	public DBObject getCategory(Number id) {
+		DBObject query = BasicDBObjectBuilder.start().add("_id", id).get();
+		DBObject cursor = collection.findOne(query);
+		System.out.println("getCategory "+query);
 		return cursor;	
 	}
-public DBCursor getVendors() {
-		DBCursor cursor = collection.find(new BasicDBObject());
-		System.out.println("cursor"+cursor);
-		return cursor;	
-	}
-	
-	
 	public DBObject getCustomerBasedOnEmail(String emailId) {
 		DBObject query = BasicDBObjectBuilder.start().add("email", emailId).get();
 		DBObject cursor = collection.findOne(query);
